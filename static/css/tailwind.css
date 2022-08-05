@@ -1,0 +1,338 @@
+/* tailwind -i static/css/tailwind.css -o static/css/stylesheet.css */
+@tailwind base;
+
+@tailwind components;
+
+* {
+    font-family: 'Readex Pro', 'Noto Sans TC', sans-serif;
+}
+
+*::selection {
+    @apply bg-sky-500 text-white;
+}
+
+*::-webkit-scrollbar {
+    @apply bg-slate-100;
+    width: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply bg-slate-500;
+    width: 5px;
+}
+
+.mso {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+    text-transform: none;
+    vertical-align: text-bottom;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    @apply text-sky-500 inline-block;
+}
+
+a:hover {
+    @apply text-sky-600 cursor-pointer;
+}
+
+.btn {
+    @apply rounded-full p-3 px-5 align-text-bottom inline-block;
+    line-height: 1.2rem
+}
+
+.btn .mso {
+    @apply mr-1;
+    font-size: 1.2rem
+}
+
+.btn-actionbar {
+    @apply text-slate-500;
+}
+
+.btn-actionbar:hover {
+    @apply text-slate-600 cursor-pointer;
+}
+
+.btn-primary {
+    transition: all .2s ease;
+    @apply bg-sky-500 text-white;
+}
+
+.btn-primary:hover {
+    transition: all .2s ease;
+    @apply bg-sky-600 text-white cursor-pointer;
+}
+
+.btn-primary:active {
+    transition: all .1s ease;
+    transform: scale(0.95);
+}
+
+.btn-danger {
+    transition: all .2s ease;
+    @apply bg-rose-500 text-white;
+}
+
+.btn-danger:hover {
+    transition: all .2s ease;
+    @apply bg-rose-600 text-white cursor-pointer;
+}
+
+.btn-danger:active {
+    transition: all .1s ease;
+    transform: scale(0.95);
+}
+
+.btn-white {
+    transition: all .2s ease;
+    @apply bg-white text-sky-500;
+}
+
+.btn-white:hover {
+    transition: all .2s ease;
+    @apply bg-sky-200 text-sky-500 cursor-pointer;
+}
+
+.btn-white:active {
+    transition: all .1s ease;
+    transform: scale(0.95);
+}
+
+.btn-secondary {
+    transition: all .2s ease;
+    @apply bg-slate-100 text-slate-900;
+}
+
+.btn-secondary:hover {
+    transition: all .2s ease;
+    @apply bg-slate-200 text-slate-900 cursor-pointer;
+}
+
+.btn-secondary:active {
+    transition: all .1s ease;
+    transform: scale(0.95);
+}
+
+/* nav */
+nav {
+    @apply flex gap-x-2;
+}
+
+nav a {
+    @apply text-2xl text-slate-500 p-2;
+}
+
+.func-bar {
+    @apply flex justify-between items-center p-3 sticky top-0 rounded-xl bg-white;
+}
+
+.btn-b-bar {
+    @apply flex justify-end items-center p-3 sticky top-0 rounded-xl bg-white;
+}
+
+/* card */
+.card {
+    @apply p-3 rounded-xl bg-white;
+    animation: fade-in 0.2s ease-out;
+}
+
+/* form */
+.form-input {
+    @apply w-full border border-slate-200 rounded-lg p-2 block;
+    transition: background .2s ease;
+}
+
+.form-input:hover {
+    @apply bg-slate-100;
+    transition: background .2s ease;
+}
+
+.form-input:focus {
+    @apply bg-white;
+    outline: 2px solid #0ea5e9;
+    transition: all .2s ease;
+}
+
+.form-label {
+    @apply text-slate-500 flex items-center my-2 ml-3;
+}
+
+.form-label>span {
+    @apply mr-2;
+}
+
+@keyframes fade-in {
+    from {
+        transform: translate(0px, 50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
+.form-checkbox {
+    @apply p-3 flex items-center border-t w-full;
+    transition: all .2s ease;
+}
+
+.form-checkbox:hover {
+    @apply bg-slate-100;
+    transition: all .2s ease;
+}
+
+.form-checkbox div {
+    @apply ml-5 overflow-hidden;
+}
+
+.form-checkbox div h3 {
+    @apply text-lg whitespace-nowrap truncate;
+}
+
+.form-checkbox div p {
+    @apply text-sm text-slate-500 whitespace-nowrap truncate;
+}
+
+
+.form-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.form-checkbox-icon::before {
+    @apply text-gray-600 text-2xl;
+    font-family: "Material Symbols Outlined";
+    content: "check_box_outline_blank";
+}
+
+.form-checkbox input[type="checkbox"]:checked+.form-checkbox-icon {
+    font-variation-settings: 'FILL' 1;
+}
+
+.form-checkbox input[type="checkbox"]:checked+.form-checkbox-icon::before {
+    @apply text-sky-500 text-2xl;
+    font-family: "Material Symbols Outlined";
+    content: "check_box";
+}
+
+/* table */
+.custom-table {
+    border-collapse: collapse;
+}
+
+.custom-table thead tr {
+    @apply table-row;
+}
+
+.custom-table thead tr th {
+    @apply table-cell px-5 py-3 text-center text-xl;
+}
+
+.custom-table tbody tr td {
+    @apply border-r table-cell border-slate-100 bg-white px-5 py-3 text-center;
+}
+
+.custom-table tbody tr td:last-child {
+    @apply border-0 table-cell bg-white px-5 py-3 text-center;
+}
+
+.custom-table tbody tr {
+    @apply border-b table-row border-slate-100;
+}
+
+.custom-table tbody tr:last-child {
+    @apply table-row border-0;
+}
+
+pre {
+    @apply whitespace-pre-wrap;
+}
+
+.nothing {
+    @apply py-5 border-t border-slate-200 text-center;
+}
+
+.nothing img {
+    max-width: 100%;
+    @apply mx-auto;
+}
+
+.nothing h3 {
+    @apply text-2xl;
+}
+
+.nothing p {
+    @apply text-slate-500;
+}
+
+.lst-item {
+    @apply border-t border-slate-200 w-full flex justify-between p-3 overflow-hidden;
+}
+
+.lst-item div h3 {
+    @apply text-xl whitespace-nowrap truncate;
+}
+
+.lst-item div p {
+    @apply text-sm text-slate-500 whitespace-nowrap truncate;
+}
+
+.lst-item nav {
+    @apply flex gap-x-2
+}
+
+.tags {
+    @apply flex gap-x-2;
+}
+
+.tags a {
+    @apply rounded-full py-1 px-3 text-sm text-sky-500 bg-sky-100;
+}
+
+.sigma {
+    @apply m-3 text-sky-500 text-4xl;
+    transition: all .2s ease;
+}
+
+.sigma:hover {
+    animation: spin 2.5s ease;
+    transition: all .2s ease;
+}
+
+@keyframes spin {
+    0% {
+        transform: skew(0,0);
+    }
+
+    25% {
+        background: transparent;
+    }
+
+    50% {
+        transform: skew(90deg,90deg);
+        color:#ec4899;
+        background: rgba(0,0,0,0.75);
+    }
+
+    75% {
+        background: transparent;
+    }
+
+    100% {
+        transform: skew(0,0);
+    }
+}
+
+@tailwind utilities;
