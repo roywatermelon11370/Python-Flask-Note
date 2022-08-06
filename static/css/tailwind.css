@@ -191,7 +191,6 @@ nav a {
 
 .form-checkbox:hover {
     @apply bg-slate-100;
-    transition: all .2s ease;
 }
 
 .form-checkbox div {
@@ -302,13 +301,13 @@ pre {
 }
 
 .sigma {
-    @apply m-3 text-sky-500 text-4xl;
-    transition: all .2s ease;
+    @apply flex justify-center items-center mr-3 text-sky-500 bg-slate-100 text-2xl relative rounded-lg;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .sigma:hover {
     animation: spin 2.5s ease;
-    transition: all .2s ease;
 }
 
 @keyframes spin {
@@ -318,16 +317,19 @@ pre {
 
     25% {
         background: transparent;
+        backdrop-filter: invert(0%);
     }
 
     50% {
         transform: skew(90deg,90deg);
-        color:#ec4899;
-        background: rgba(0,0,0,0.75);
+        color:#a3e635;
+        background: rgba(0,0,0,0);
+        backdrop-filter: invert(100%);
     }
 
     75% {
         background: transparent;
+        backdrop-filter: invert(0%);
     }
 
     100% {

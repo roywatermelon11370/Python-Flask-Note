@@ -29,52 +29,55 @@
         </header>
         <section class="card">
             <div class="func-bar">
-                <a href="add" class="btn btn-primary"><span class="mso">add</span>Add Note</a>
                 <a href="manage" class="btn btn-secondary"><span class="mso">tune</span>Manage</a>
+                <a href="add" class="btn btn-primary"><span class="mso">add</span>Add Note</a>
             </div>
 
+            {% if notelst|length != 0 %}
             <div id="notes" class="note-lst">
+                {% for noteitem in notelst %}
                 <div class="lst-item">
                     <div>
-                        <h3>Title</h3>
-                        <p>content</p>
+                        <h3>{{noteitem.title}}</h3>
+                        <p>{{noteitem.content}}</p>
                         <div class="tags mt-2">
-                            <a href="#">hello</a>
-                            <a href="#">world</a>
-                            <a href="#">there</a>
-                            <a href="#">are</a>
-                            <a href="#">many</a>
-                            <a href="#">tags</a>
+                            {% for tag in noteitem.tags %}
+                            <a href="result/{{tag}}">{{tag}}</a>
+                            {% endfor %}
                         </div>
                     </div>
 
                     <nav>
-                        <a href="detail.html"><span class="mso">arrow_forward</span></a>
+                        <a href="detail/{{noteitem.id}}"><span class="mso">arrow_forward</span></a>
                     </nav>
                 </div>
+                {% endfor %}
             </div>
+            {% endif %}
 
-            <div id="nothing" class="nothing hidden">
+            {% if notelst|length == 0 %}
+            <div id="nothing" class="nothing">
                 <img src="{{ url_for('static', filename='img/blank.svg') }}" alt="Blank">
                 <h3>Nothing added</h3>
                 <p>Try adding something new!</p>
             </div>
+            {% endif %}
         </section>
     </div>
 </body>
 
 <script>
-    function hidd() {
-        var NoteCount = '{{ notelst|length }}';
-        console.log(NoteCount);
-        if (NoteCount == 0) {
-            console.log('h');
-            document.getElementById('notes').classList.add('hidden');
-            document.getElementById('nothing').classList.remove('hidden');
-        }
-    }
+    // function hidd() {
+    //     var NoteCount = '{{ notelst|length }}';
+    //     console.log(NoteCount);
+    //     if (NoteCount == 0) {
+    //         console.log('h');
+    //         document.getElementById('notes').classList.add('hidden');
+    //         document.getElementById('nothing').classList.remove('hidden');
+    //     }
+    // }
 
-    hidd();
+    // hidd();
 </script>
 
 </html>

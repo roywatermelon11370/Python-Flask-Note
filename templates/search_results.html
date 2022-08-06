@@ -29,6 +29,21 @@
         </header>
 
         <section class="card">
+            <form action="" method="post">
+                <div class="mt-5">
+                    <label for="search" class="form-label"><span class="mso">search</span> search</label>
+                    <input id="search" name="search" type="text" class="form-input"
+                        placeholder="Type words that you're looking for">
+                </div>
+
+                <div class="mt-5 flex justify-end gap-x-2">
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card mt-5">
             <div class="note-lst">
                 <div class="lst-item">
                     <div>
@@ -45,9 +60,15 @@
                     </div>
 
                     <nav>
-                        <a href="detail.html"><span class="mso">arrow_forward</span></a>
+                        <a href="detail"><span class="mso">arrow_forward</span></a>
                     </nav>
                 </div>
+            </div>
+
+            <div id="nothing" class="nothing">
+                <img src="{{ url_for('static', filename='img/404.svg') }}" alt="Blank">
+                <h3>Nothing found</h3>
+                <p>We couldn't find what you're looking for</p>
             </div>
         </section>
     </div>

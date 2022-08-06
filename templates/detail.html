@@ -29,36 +29,38 @@
         </header>
 
         <section class="card">
-            <div class="p-2 border-b flex justify-between items-center">
-                <div>
-                    <h1 class="text-2xl">Title</h1>
+            {% if noteitem != 0 %}
+            <div id="note">
+                <div class="p-2 border-b flex justify-between items-center">
+                    <div>
+                        <h1 class="text-2xl">{{noteitem.title}}</h1>
+                    </div>
+
+                    <nav>
+                        <a href="/edit/{{noteitem.id}}"><span class="mso">edit</span></a>
+                        <a href="/delete/{{noteitem.id}}"><span class="mso">delete</span></a>
+                    </nav>
                 </div>
 
-                <nav>
-                    <a href="edit.html"><span class="mso">edit</span></a>
-                    <a href="edit.html"><span class="mso">delete</span></a>
-                </nav>
-            </div>
+                <div class="tags mt-5">
+                    {% for tag in noteitem.tags %}
+                    <a href="result/{{tag}}">{{tag}}</a>
+                    {% endfor %}
+                </div>
 
-            <div class="tags mt-5">
-                <a href="#">hello</a>
-                <a href="#">world</a>
-                <a href="#">this</a>
-                <a href="#">is</a>
-                <a href="#">a</a>
-                <a href="#">tag</a>
+                <div class="p-2 py-3">
+                    {{noteitem.content}}
+                </div>
             </div>
+            {% endif %}
 
-            <div class="p-2 py-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio earum totam labore odio, veritatis
-                nobis illo debitis ipsum nulla a sequi aliquam odit, exercitationem tenetur explicabo sapiente incidunt,
-                eligendi laudantium quidem praesentium! Minus magni inventore suscipit atque ab iure maxime corrupti
-                sint qui voluptatibus deserunt sapiente omnis, voluptatum ad, adipisci laudantium asperiores eius vel.
-                Mollitia doloribus ducimus, nostrum odit, assumenda animi quisquam nesciunt ab consequuntur fugit error
-                perspiciatis? Magni, optio molestias. Ut, ullam. Sunt velit aliquam, consequuntur placeat ipsa et eos
-                est repudiandae repellendus minima explicabo excepturi deleniti earum, enim repellat? Placeat incidunt,
-                repudiandae molestias quibusdam odio modi perspiciatis dicta!
+            {% if noteitem == 0 %}
+            <div id="nothing" class="nothing">
+                <img src="{{ url_for('static', filename='img/404.svg') }}" alt="Blank">
+                <h3>Nothing found</h3>
+                <p>We couldn't find what you're looking for</p>
             </div>
+            {% endif %}
         </section>
     </div>
 </body>
