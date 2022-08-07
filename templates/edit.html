@@ -29,24 +29,27 @@
         </header>
 
         <section class="card">
-            <form action="" method="post">
+            {% if noteitem != 0 %}
+            <form action="/editAction" method="post">
+                <input type="hidden" name="id" value="{{noteitem.id}}">
                 <div class="mt-5">
                     <label for="title" class="form-label"><span class="mso">format_list_bulleted</span> Title</label>
-                    <input id="title" name="title" type="text" class="form-input">
+                    <input id="title" name="title" type="text" class="form-input" value="{{noteitem.title}}" required>
                 </div>
 
                 <div class="mt-5">
                     <label for="content" class="form-label"><span class="mso">notes</span> Content</label>
-                    <textarea name="content" id="content" cols="auto" rows="10" class="form-input"></textarea>
+                    <textarea name="content" id="content" cols="auto" rows="10"
+                        class="form-input" required>{{noteitem.content}}</textarea>
                 </div>
 
                 <div class="mt-5">
                     <label for="tags" class="form-label"><span class="mso">label</span> Tags</label>
-                    <input id="tags" name="tags" type="text" class="form-input">
+                    <input id="tags" name="tags" type="text" class="form-input" value="{{tags}}" required>
                 </div>
                 <div class="mt-5 flex justify-between">
                     <div>
-                        <a href="#" class="btn btn-white">Delete this Note</a>
+                        <a href="/delete/{{noteitem.id}}" class="btn btn-white">Delete this Note</a>
                     </div>
                     <div class="flex gap-x-2">
                         <button type="reset" class="btn btn-secondary">Reset</button>
@@ -54,6 +57,15 @@
                     </div>
                 </div>
             </form>
+            {% endif %}
+
+            {% if noteitem == 0 %}
+            <div id="nothing" class="nothing">
+                <img src="{{ url_for('static', filename='img/404.svg') }}" alt="Blank">
+                <h3>Not Found</h3>
+                <p>We couldn't find what you're looking for</p>
+            </div>
+            {% endif %}
         </section>
     </div>
 </body>

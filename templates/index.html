@@ -28,13 +28,12 @@
             </nav>
         </header>
         <section class="card">
-            <div class="func-bar">
-                <a href="manage" class="btn btn-secondary"><span class="mso">tune</span>Manage</a>
-                <a href="add" class="btn btn-primary"><span class="mso">add</span>Add Note</a>
-            </div>
-
             {% if notelst|length != 0 %}
-            <div id="notes" class="note-lst">
+            <div id="notes">
+                <div class="func-bar">
+                    <a href="manage" class="btn btn-secondary"><span class="mso">tune</span>Manage</a>
+                    <a href="add" class="btn btn-primary"><span class="mso">add</span>Add Note</a>
+                </div>
                 {% for noteitem in notelst %}
                 <div class="lst-item">
                     <div>
@@ -42,7 +41,7 @@
                         <p>{{noteitem.content}}</p>
                         <div class="tags mt-2">
                             {% for tag in noteitem.tags %}
-                            <a href="result/{{tag}}">{{tag}}</a>
+                            <a href="/search?keyword={{tag}}">{{tag}}</a>
                             {% endfor %}
                         </div>
                     </div>
@@ -60,6 +59,7 @@
                 <img src="{{ url_for('static', filename='img/blank.svg') }}" alt="Blank">
                 <h3>Nothing added</h3>
                 <p>Try adding something new!</p>
+                <a href="add" class="btn btn-primary mt-5"><span class="mso">add</span>Add Note</a>
             </div>
             {% endif %}
         </section>

@@ -32,20 +32,20 @@
             <form action="/addAction" method="post">
                 <div class="mt-5">
                     <label for="title" class="form-label"><span class="mso">format_list_bulleted</span> Title</label>
-                    <input id="title" name="title" type="text" class="form-input">
+                    <input id="title" name="title" type="text" class="form-input" required>
                 </div>
 
                 <div class="mt-5">
                     <label for="content" class="form-label"><span class="mso">notes</span> Content</label>
-                    <textarea name="content" id="content" cols="auto" rows="10" class="form-input"></textarea>
+                    <textarea name="content" id="content" cols="auto" rows="10" class="form-input" required></textarea>
                 </div>
 
                 <div class="mt-5">
                     <label for="tags" class="form-label"><span class="mso">label</span> Tags (separate by , )</label>
-                    <input id="tags" name="tags" type="text" class="form-input">
+                    <input id="tags" name="tags" type="text" class="form-input" required>
                 </div>
                 <div class="mt-5 flex justify-end gap-x-2">
-                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="reset" class="btn btn-secondary">Clear</button>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </form>

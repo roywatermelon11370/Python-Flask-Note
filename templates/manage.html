@@ -24,28 +24,40 @@
             </nav>
             <h1 class="text-2xl font-bold">Manage Notes</h1>
             <nav>
-                <a href="search"><span class="mso">search</span></a>
+                <a href="/search"><span class="mso">search</span></a>
             </nav>
         </header>
 
         <section class="card">
-            <form action="" method="post">
+            {% if notelst|length != 0 %}
+            <form action="/manageAction" method="post">
                 <div class="func-bar">
                     <button type="reset" class="btn btn-secondary"><span class="mso">close</span> Clear</button>
                     <button type="submit" class="btn btn-danger"><span class="mso">delete</span> Delete</button>
                 </div>
 
+                {% for noteitem in notelst %}
                 <label class="form-checkbox">
-                    <input type="checkbox">
+                    <input type="checkbox" name="noteitem" value="{{noteitem.id}}">
                     <span class="form-checkbox-icon"></span>
                     <div>
-                        <h3>Title</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus possimus non laboriosam
-                            exercitationem aut molestiae consequuntur, placeat blanditiis in commodi.</p>
+                        <h3>{{noteitem.title}}</h3>
+                        <p>{{noteitem.content}}</p>
                     </div>
                 </label>
+                {% endfor %}
 
             </form>
+            {% endif %}
+
+
+            {% if notelst|length == 0 %}
+            <div id="nothing" class="nothing">
+                <img src="{{ url_for('static', filename='img/blank.svg') }}" alt="Blank">
+                <h3>Nothing added</h3>
+                <p>Try adding something new!</p>
+            </div>
+            {% endif %}
         </section>
     </div>
 </body>

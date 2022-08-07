@@ -29,47 +29,50 @@
         </header>
 
         <section class="card">
-            <form action="" method="post">
+            <form action="/search" method="get">
                 <div class="mt-5">
                     <label for="search" class="form-label"><span class="mso">search</span> search</label>
-                    <input id="search" name="search" type="text" class="form-input"
-                        placeholder="Type words that you're looking for">
+                    <input id="search" name="keyword" type="text" class="form-input"
+                        placeholder="Type words that you're looking for" required value="{{keyword}}">
                 </div>
 
                 <div class="mt-5 flex justify-end gap-x-2">
-                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="reset" class="btn btn-secondary">Clear</button>
                     <button type="submit" class="btn btn-primary">Search</button>
                 </div>
             </form>
         </section>
 
         <section class="card mt-5">
+            {% if resultlst|length !=0 %}
             <div class="note-lst">
+                {% for noteitem in resultlst %}
                 <div class="lst-item">
                     <div>
-                        <h3>Title</h3>
-                        <p>content</p>
+                        <h3>{{noteitem.title}}</h3>
+                        <p>{{noteitem.content}}</p>
                         <div class="tags mt-2">
-                            <a href="#">hello</a>
-                            <a href="#">world</a>
-                            <a href="#">there</a>
-                            <a href="#">are</a>
-                            <a href="#">many</a>
-                            <a href="#">tags</a>
+                            {% for tag in noteitem.tags %}
+                            <a href="/search?keyword={{tag}}">{{tag}}</a>
+                            {% endfor %}
                         </div>
                     </div>
 
                     <nav>
-                        <a href="detail"><span class="mso">arrow_forward</span></a>
+                        <a href="detail/{{noteitem.id}}"><span class="mso">arrow_forward</span></a>
                     </nav>
                 </div>
+                {% endfor %}
             </div>
+            {% endif %}
 
+            {% if resultlst|length == 0 %}
             <div id="nothing" class="nothing">
                 <img src="{{ url_for('static', filename='img/404.svg') }}" alt="Blank">
-                <h3>Nothing found</h3>
+                <h3>Not Found</h3>
                 <p>We couldn't find what you're looking for</p>
             </div>
+            {% endif %}
         </section>
     </div>
 </body>

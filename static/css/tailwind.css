@@ -13,12 +13,21 @@
 
 *::-webkit-scrollbar {
     @apply bg-slate-100;
-    width: 5px;
+    width: 7.5px;
+}
+
+*::-webkit-scrollbar:hover {
+    @apply bg-slate-200;
+    width: 7.5px;
 }
 
 *::-webkit-scrollbar-thumb {
-    @apply bg-slate-500;
-    width: 5px;
+    @apply bg-slate-500 rounded-full;
+    width: 7.5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600 rounded-full;
 }
 
 .mso {
@@ -51,6 +60,11 @@ a:hover {
     line-height: 1.2rem
 }
 
+.btn:active {
+    transition: all .1s ease;
+    transform: scale(0.95);
+}
+
 .btn .mso {
     @apply mr-1;
     font-size: 1.2rem
@@ -74,11 +88,6 @@ a:hover {
     @apply bg-sky-600 text-white cursor-pointer;
 }
 
-.btn-primary:active {
-    transition: all .1s ease;
-    transform: scale(0.95);
-}
-
 .btn-danger {
     transition: all .2s ease;
     @apply bg-rose-500 text-white;
@@ -87,11 +96,6 @@ a:hover {
 .btn-danger:hover {
     transition: all .2s ease;
     @apply bg-rose-600 text-white cursor-pointer;
-}
-
-.btn-danger:active {
-    transition: all .1s ease;
-    transform: scale(0.95);
 }
 
 .btn-white {
@@ -104,11 +108,6 @@ a:hover {
     @apply bg-sky-200 text-sky-500 cursor-pointer;
 }
 
-.btn-white:active {
-    transition: all .1s ease;
-    transform: scale(0.95);
-}
-
 .btn-secondary {
     transition: all .2s ease;
     @apply bg-slate-100 text-slate-900;
@@ -119,18 +118,25 @@ a:hover {
     @apply bg-slate-200 text-slate-900 cursor-pointer;
 }
 
-.btn-secondary:active {
-    transition: all .1s ease;
-    transform: scale(0.95);
-}
-
 /* nav */
 nav {
     @apply flex gap-x-2;
 }
 
 nav a {
-    @apply text-2xl text-slate-500 p-2;
+    @apply text-2xl text-slate-500 p-2 rounded-full inline-flex justify-center items-center;
+    width:3rem;
+    height: 3rem;
+    transition: all .2s ease;
+}
+
+nav a:hover {
+    @apply bg-sky-100;
+}
+
+nav a:active {
+    transition: all .1s ease;
+    transform: scale(0.95);
 }
 
 .func-bar {
@@ -260,7 +266,7 @@ pre {
 }
 
 .nothing {
-    @apply py-5 border-t border-slate-200 text-center;
+    @apply py-5 text-center;
 }
 
 .nothing img {
@@ -307,12 +313,16 @@ pre {
 }
 
 .sigma:hover {
-    animation: spin 2.5s ease;
+    cursor: default;
+}
+
+.sigma:active {
+    @apply outline-none;
 }
 
 @keyframes spin {
     0% {
-        transform: skew(0,0);
+        transform: skew(0, 0);
     }
 
     25% {
@@ -321,10 +331,10 @@ pre {
     }
 
     50% {
-        transform: skew(90deg,90deg);
-        color:#a3e635;
-        background: rgba(0,0,0,0);
-        backdrop-filter: invert(100%);
+        transform: skew(90deg, 90deg);
+        color: #a3e635;
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: invert(100%) hue-rotate(180deg);
     }
 
     75% {
@@ -333,7 +343,7 @@ pre {
     }
 
     100% {
-        transform: skew(0,0);
+        transform: skew(0, 0);
     }
 }
 

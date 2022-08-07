@@ -57,11 +57,29 @@
         </section>
         <section class="card mt-5">
             <div class="flex items-center">
-                <span class="mso sigma">sticky_note_2</span>
+                <button onclick="AddTaps()" class="mso sigma">sticky_note_2</button>
                 <p class="text-slate-500 text-sm">Note Sigma<br>Version: 2.0.1.7122</p>
             </div>
         </section>
+
+        <div id="more"></div>
+        
     </div>
 </body>
+
+<script>
+    var tapTimes=0;
+    d1=document.getElementById('more');
+    function AddTaps() {
+        tapTimes=tapTimes+1;
+        console.log(tapTimes);
+        if(tapTimes>4) {
+        d1.innerHTML='<section class="card mt-5 text-center"><img src="{{ url_for("static", filename="img/cat.jpg") }}" alt="cat" class="rounded-lg"><p class="mt-2 text-slate-500">A cat lying in a parking lot</p></section>';
+        }
+    }
+
+    
+
+</script>
 
 </html>

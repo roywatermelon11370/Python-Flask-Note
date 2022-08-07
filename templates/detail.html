@@ -44,7 +44,7 @@
 
                 <div class="tags mt-5">
                     {% for tag in noteitem.tags %}
-                    <a href="result/{{tag}}">{{tag}}</a>
+                    <a href="/search?keyword={{tag}}">{{tag}}</a>
                     {% endfor %}
                 </div>
 
@@ -57,7 +57,7 @@
             {% if noteitem == 0 %}
             <div id="nothing" class="nothing">
                 <img src="{{ url_for('static', filename='img/404.svg') }}" alt="Blank">
-                <h3>Nothing found</h3>
+                <h3>Not Found</h3>
                 <p>We couldn't find what you're looking for</p>
             </div>
             {% endif %}

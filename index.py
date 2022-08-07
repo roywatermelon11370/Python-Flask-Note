@@ -1,8 +1,8 @@
-from flask import Flask,render_template,request,redirect,url_for
+from flask import Flask,render_template,request,redirect,url_for,flash
 app=Flask(__name__)
 notelst=[]
 noteTem={'id':'','ttle':'','conten':'','tgs':[]}
-setts={'rmAnim' : False, 'darkMode' : False}
+settings={'rmAnim' : False, 'darkMode' : False}
 
 
 def maxIdPlusOne():
@@ -55,25 +55,38 @@ def ShowDetail(addId):
 @app.route("/edit/<int:editId>", methods=['GET'])
 def edit(editId):
     curr=findItemById(editId)
-    return render_template('edit.html',noteitem=curr)
+    if(curr!=0):
+        tagsShow=','.join(list(curr['tags']))
+    else:
+        tagsShow=0
+    return render_template('edit.html',noteitem=curr,tags=tagsShow)
 
 
 @app.route("/editAction", methods=['POST'])
 def editAction():
-    currId=request.form['id']
+    currId=int(request.form['id'])
     ttle=request.form['title']
     conten=request.form['content']
     tagsAll=request.form['tags']
     tgs=set(tagsAll.split(','))
     curr=findItemById(currId)
-    currIndex=curr.index()
     notelst.remove(curr)
-    notelst.insert(currIndex,{'id':currId,'title':ttle,'content':conten,'tags':tgs})
+    notelst.append({'id':currId,'title':ttle,'content':conten,'tags':tgs})
+    return redirect('detail/{}'.format(currId))
 
 
 @app.route("/manage")
 def manage():
-    return render_template('manage.html')
+    return render_template('manage.html', notelst=notelst)
+
+
+@app.route("/manageAction", methods=['POST'])
+def manageAction():
+    checkedId=request.form.getlist('noteitem')
+    for i in checkedId:
+        curr=findItemById(int(i))
+        notelst.remove(curr)
+    return redirect('/')
 
 
 @app.route("/delete/<int:delId>", methods=['GET'])
@@ -90,13 +103,16 @@ def settings():
 
 @app.route("/search")
 def search():
-    return render_template('search.html')
-
-
-@app.route("/result")
-def result():
-    return render_template('search_results.html')
-
+    keyWord=request.args.get('keyword')
+    results=[]
+    if keyWord:
+        for i in notelst:
+            for j in i['tags']:
+                if j==keyWord:
+                    results.append(i)
+        return render_template('search.html',resultlst=results,keyword=keyWord)
+    return  render_template('search.html',keyword=False,resultlst=False)
+ 
 
 if __name__=='__main__':
 	app.run('localhost',9000,debug=True)
