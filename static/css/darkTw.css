@@ -1,0 +1,119 @@
+* {
+    @apply text-white;
+}
+
+*::-webkit-scrollbar {
+    @apply bg-slate-900;
+    width: 7.5px;
+}
+
+*::-webkit-scrollbar:hover {
+    @apply bg-slate-800;
+    width: 7.5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply bg-slate-800 rounded-full;
+    width: 7.5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-700 rounded-full;
+}
+
+.bg-main {
+    @apply bg-black;
+}
+
+nav a:hover {
+    @apply bg-sky-800;
+}
+
+.card {
+    @apply bg-slate-800;
+}
+
+.detail-title {
+    @apply border-slate-600;
+}
+
+.btn-white {
+    transition: all .2s ease;
+    @apply bg-slate-800 text-sky-500;
+}
+
+.btn-white:hover {
+    transition: all .2s ease;
+    @apply bg-slate-700 text-sky-500 cursor-pointer;
+}
+
+.btn-secondary {
+    transition: all .2s ease;
+    @apply bg-slate-700 text-white;
+}
+
+.btn-secondary:hover {
+    transition: all .2s ease;
+    @apply bg-slate-500 text-white cursor-pointer;
+}
+
+.func-bar {
+    @apply bg-slate-800;
+}
+
+.form-label {
+    @apply text-slate-500;
+}
+
+.form-label .mso {
+    @apply text-slate-500;
+}
+
+.form-input {
+    @apply w-full border border-slate-600 bg-slate-800 rounded-lg p-2 block;
+    transition: background .2s ease;
+}
+
+.form-input:hover {
+    @apply bg-slate-700;
+    transition: background .2s ease;
+}
+
+.form-input:focus {
+    @apply bg-slate-800;
+    outline: 2.25px solid #0ea5e9;
+    transition: all .2s ease;
+}
+
+.form-checkbox {
+    @apply border-slate-600;
+    transition: all .2s ease;
+}
+
+.form-checkbox:hover {
+    @apply bg-slate-700;
+}
+
+.form-radio-group {
+    @apply border-t border-slate-600 p-3;
+}
+
+.form-radio:hover {
+    @apply bg-slate-700;
+}
+
+.lst-item {
+    @apply border-t border-slate-600 w-full flex justify-between p-3 overflow-hidden;
+}
+
+.tags a {
+    @apply rounded-full py-1 px-3 text-sm text-sky-500 bg-sky-700;
+}
+
+.sigma {
+    @apply bg-slate-900;
+}
+
+.nothing img {
+    filter: invert(100%) hue-rotate(180deg);
+}

@@ -1,0 +1,113 @@
+*::selection {
+    @apply bg-cyan-500 text-white;
+}
+
+*::-webkit-scrollbar {
+    @apply bg-slate-200;
+    width: 7.5px;
+}
+
+*::-webkit-scrollbar:hover {
+    @apply bg-slate-300;
+    width: 7.5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply bg-slate-500 rounded-full;
+    width: 7.5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600 rounded-full;
+}
+
+a {
+    @apply text-cyan-500 inline-block;
+}
+
+a:hover {
+    @apply text-cyan-600 cursor-pointer;
+}
+
+nav a:hover {
+    @apply bg-cyan-200;
+}
+
+.index-title-primary {
+    @apply text-cyan-500;
+}
+
+.text-primary {
+    @apply text-cyan-500
+}
+
+.bg-main {
+    @apply bg-slate-200;
+}
+
+.card {
+    @apply shadow-lg;
+}
+
+.btn {
+    @apply rounded-md;
+}
+
+.btn:hover {
+    @apply shadow-lg;
+}
+
+.btn:active {
+    @apply shadow-none;
+}
+
+.btn-primary {
+    @apply bg-cyan-500;
+}
+
+.btn-primary:hover {
+    @apply bg-cyan-600;
+}
+
+.btn-secondary {
+    @apply bg-slate-200;
+}
+
+.btn-secondary:hover {
+    @apply bg-slate-300;
+}
+
+.btn-white {
+    @apply bg-white text-cyan-500;
+}
+
+.btn-white:hover {
+    transition: all .2s ease;
+    @apply bg-cyan-200 text-cyan-500 cursor-pointer;
+}
+
+.form-input {
+    @apply rounded-lg;
+}
+
+.form-input:focus {
+    @apply bg-white;
+    outline: 2.25px solid #06b6d4;
+    transition: all .2s ease;
+}
+
+.form-checkbox input[type="checkbox"]:checked+.form-checkbox-icon::before {
+    @apply text-cyan-500 text-2xl;
+}
+
+.form-radio input[type="radio"]:checked+.form-radio-icon::before {
+    @apply text-cyan-500 text-2xl;
+}
+
+.tags a {
+    @apply rounded-full py-1 px-3 text-sm text-cyan-500 bg-cyan-100;
+}
+
+.sigma {
+    @apply bg-slate-200 rounded-md text-cyan-500;
+}

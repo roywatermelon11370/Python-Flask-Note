@@ -30,6 +30,11 @@
     @apply bg-slate-600 rounded-full;
 }
 
+.bg-main {
+    @apply bg-slate-100;
+    min-height: 100vh;
+}
+
 .mso {
     font-family: 'Material Symbols Outlined';
     font-weight: normal;
@@ -53,6 +58,10 @@ a {
 
 a:hover {
     @apply text-sky-600 cursor-pointer;
+}
+
+.text-primary {
+    @apply text-sky-500
 }
 
 .btn {
@@ -125,7 +134,7 @@ nav {
 
 nav a {
     @apply text-2xl text-slate-500 p-2 rounded-full inline-flex justify-center items-center;
-    width:3rem;
+    width: 3rem;
     height: 3rem;
     transition: all .2s ease;
 }
@@ -143,14 +152,35 @@ nav a:active {
     @apply flex justify-between items-center p-3 sticky top-0 rounded-xl bg-white;
 }
 
-.btn-b-bar {
-    @apply flex justify-end items-center p-3 sticky top-0 rounded-xl bg-white;
+/* header */
+.header {
+    @apply p-2 flex justify-between items-center;
+}
+
+.header h1 {
+    @apply text-2xl font-bold;
+}
+
+.index-header {
+    @apply flex items-center justify-between p-5;
+}
+
+.index-header h1 {
+    @apply text-3xl font-bold;
+}
+
+.index-title-primary {
+    @apply text-sky-500;
 }
 
 /* card */
 .card {
     @apply p-3 rounded-xl bg-white;
     animation: fade-in 0.2s ease-out;
+}
+
+.detail-title {
+    @apply p-2 border-b flex justify-between items-center;
 }
 
 /* form */
@@ -166,7 +196,7 @@ nav a:active {
 
 .form-input:focus {
     @apply bg-white;
-    outline: 2px solid #0ea5e9;
+    outline: 2.25px solid #0ea5e9;
     transition: all .2s ease;
 }
 
@@ -191,7 +221,7 @@ nav a:active {
 }
 
 .form-checkbox {
-    @apply p-3 flex items-center border-t w-full;
+    @apply p-3 flex justify-between items-center border-t w-full;
     transition: all .2s ease;
 }
 
@@ -200,7 +230,7 @@ nav a:active {
 }
 
 .form-checkbox div {
-    @apply ml-5 overflow-hidden;
+    @apply overflow-hidden;
 }
 
 .form-checkbox div h3 {
@@ -217,7 +247,7 @@ nav a:active {
 }
 
 .form-checkbox-icon::before {
-    @apply text-gray-600 text-2xl;
+    @apply text-slate-500 text-2xl;
     font-family: "Material Symbols Outlined";
     content: "check_box_outline_blank";
 }
@@ -230,6 +260,45 @@ nav a:active {
     @apply text-sky-500 text-2xl;
     font-family: "Material Symbols Outlined";
     content: "check_box";
+}
+
+/* radio */
+.form-radio-group {
+    @apply border-t border-slate-200 p-3;
+}
+
+.form-radio {
+    @apply p-2 flex items-center w-full;
+    transition: all .2s ease;
+}
+
+.form-radio:hover {
+    @apply bg-slate-100;
+}
+
+.form-radio p {
+    @apply ml-3;
+}
+
+
+.form-radio input[type="radio"] {
+    display: none;
+}
+
+.form-radio-icon::before {
+    @apply text-gray-600 text-2xl;
+    font-family: "Material Symbols Outlined";
+    content: "radio_button_unchecked";
+}
+
+.form-radio input[type="radio"]:checked+.form-radio-icon {
+    font-variation-settings: 'FILL' 1;
+}
+
+.form-radio input[type="radio"]:checked+.form-radio-icon::before {
+    @apply text-sky-500 text-2xl;
+    font-family: "Material Symbols Outlined";
+    content: "radio_button_checked";
 }
 
 /* table */

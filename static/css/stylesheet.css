@@ -601,6 +601,12 @@ video {
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
+.bg-main {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+  min-height: 100vh;
+}
+
 .mso {
   font-family: 'Material Symbols Outlined';
   font-weight: normal;
@@ -628,6 +634,11 @@ a:hover {
   cursor: pointer;
   --tw-text-opacity: 1;
   color: rgb(2 132 199 / var(--tw-text-opacity));
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(14 165 233 / var(--tw-text-opacity));
 }
 
 .btn {
@@ -747,7 +758,7 @@ nav a {
   line-height: 2rem;
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
-  width:3rem;
+  width: 3rem;
   height: 3rem;
   transition: all .2s ease;
 }
@@ -775,17 +786,37 @@ nav a:active {
   padding: 0.75rem;
 }
 
-.btn-b-bar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
+/* header */
+
+.header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  border-radius: 0.75rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding: 0.75rem;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.index-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+
+.index-header h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.index-title-primary {
+  --tw-text-opacity: 1;
+  color: rgb(14 165 233 / var(--tw-text-opacity));
 }
 
 /* card */
@@ -797,6 +828,14 @@ nav a:active {
   padding: 0.75rem;
   -webkit-animation: fade-in 0.2s ease-out;
           animation: fade-in 0.2s ease-out;
+}
+
+.detail-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  padding: 0.5rem;
 }
 
 /* form */
@@ -821,7 +860,7 @@ nav a:active {
 .form-input:focus {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  outline: 2px solid #0ea5e9;
+  outline: 2.25px solid #0ea5e9;
   transition: all .2s ease;
 }
 
@@ -867,6 +906,7 @@ nav a:active {
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: space-between;
   border-top-width: 1px;
   padding: 0.75rem;
   transition: all .2s ease;
@@ -878,7 +918,6 @@ nav a:active {
 }
 
 .form-checkbox div {
-  margin-left: 1.25rem;
   overflow: hidden;
 }
 
@@ -908,7 +947,7 @@ nav a:active {
   font-size: 1.5rem;
   line-height: 2rem;
   --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
+  color: rgb(100 116 139 / var(--tw-text-opacity));
   font-family: "Material Symbols Outlined";
   content: "check_box_outline_blank";
 }
@@ -924,6 +963,58 @@ nav a:active {
   color: rgb(14 165 233 / var(--tw-text-opacity));
   font-family: "Material Symbols Outlined";
   content: "check_box";
+}
+
+/* radio */
+
+.form-radio-group {
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240 / var(--tw-border-opacity));
+  padding: 0.75rem;
+}
+
+.form-radio {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0.5rem;
+  transition: all .2s ease;
+}
+
+.form-radio:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
+.form-radio p {
+  margin-left: 0.75rem;
+}
+
+.form-radio input[type="radio"] {
+  display: none;
+}
+
+.form-radio-icon::before {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+  font-family: "Material Symbols Outlined";
+  content: "radio_button_unchecked";
+}
+
+.form-radio input[type="radio"]:checked+.form-radio-icon {
+  font-variation-settings: 'FILL' 1;
+}
+
+.form-radio input[type="radio"]:checked+.form-radio-icon::before {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(14 165 233 / var(--tw-text-opacity));
+  font-family: "Material Symbols Outlined";
+  content: "radio_button_checked";
 }
 
 /* table */
@@ -1201,19 +1292,6 @@ pre {
   border-radius: 0.5rem;
 }
 
-.border-b {
-  border-bottom-width: 1px;
-}
-
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-
-.p-5 {
-  padding: 1.25rem;
-}
-
 .p-2 {
   padding: 0.5rem;
 }
@@ -1227,28 +1305,19 @@ pre {
   text-align: center;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.text-sky-500 {
-  --tw-text-opacity: 1;
-  color: rgb(14 165 233 / var(--tw-text-opacity));
 }
 
 .text-slate-500 {

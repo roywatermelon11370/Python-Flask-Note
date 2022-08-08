@@ -1,0 +1,389 @@
+@font-face {
+    font-family: "tahoma";
+    src: url("../fonts/tahoma.ttf");
+}
+
+* {
+    font-family: 'tahoma', serif;
+}
+
+*::selection {
+    background: #0a246a;
+    @apply text-white;
+}
+
+*::-webkit-scrollbar {
+    background: white;
+    width: 12.25px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #d4d0c8;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+    border-bottom: 2.25px solid #8b8a87;
+    border-radius: 0;
+    width: 12.25px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #d4d0c8;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+    border-bottom: 2.25px solid #8b8a87;
+    border-radius: 0;
+    width: 12.25px;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background: #d4d0c8;
+    border-right: 2.25px solid #e1dad8;
+    border-bottom: 2.25px solid #e1dad8;
+    border-top: 2.25px solid #8b8a87;
+    border-left: 2.25px solid #8b8a87;
+    border-radius: 0;
+    width: 12.25px;
+}
+
+.bg-main {
+    background: #3a6ea5;
+}
+
+.header {
+    background: linear-gradient(to right, #0a246a, #a6caf0);
+    color: white;
+    @apply mt-5 p-1;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+}
+
+.header h1 {
+    @apply text-lg;
+}
+
+.index-header {
+    @apply p-1 mt-5;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+    background: linear-gradient(to right, #0a246a, #a6caf0);
+    color: white;
+}
+
+.index-header h1 {
+    @apply text-xl;
+    line-height: 1.25rem;
+}
+
+.index-title-primary {
+    color: white;
+}
+
+.func-bar {
+    background: #d4d0c8;
+    @apply p-2 rounded-none;
+}
+
+.card {
+    background: #d4d0c8;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+    border-bottom: 2.25px solid #8b8a87;
+    border-radius: 0;
+    animation: none;
+}
+
+a {
+    @apply inline-block;
+    color: #0a246a;
+}
+
+a:hover {
+    @apply text-sky-600 cursor-pointer;
+}
+
+.text-primary {
+    color: #0a246a
+}
+
+.btn {
+    @apply rounded-none p-2;
+    line-height: 1.2rem;
+    background: #d4d0c8;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+    border-bottom: 2.25px solid #8b8a87;
+}
+
+.btn:active {
+    transition: all 0s ease;
+}
+
+.btn .mso {
+    @apply mr-1;
+    font-size: 1.2rem
+}
+
+.btn-primary,
+.btn-danger,
+.btn-secondary,
+nav a {
+    transition: all 0s ease;
+    color: black;
+    background: #d4d0c8;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+    border-bottom: 2.25px solid #8b8a87;
+    border-radius: 0;
+}
+
+.btn-primary:hover,
+.btn-danger:hover,
+.btn-secondary:hover,
+.btn-white:hover,
+nav a:hover {
+    transition: all 0s ease;
+    color: black;
+    background: #d4d0c8;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+    border-bottom: 2.25px solid #8b8a87;
+    border-radius: 0;
+}
+
+.btn-primary:active,
+.btn-danger:active,
+.btn-secondary:active,
+.btn-white:active,
+nav a:active {
+    transition: all 0s ease;
+    color: black;
+    background: #d4d0c8;
+    border-right: 2.25px solid #e1dad8;
+    border-bottom: 2.25px solid #e1dad8;
+    border-top: 2.25px solid #8b8a87;
+    border-left: 2.25px solid #8b8a87;
+    border-radius: 0;
+}
+
+.btn-white {
+    transition: all .2s ease;
+    color: black;
+    background: transparent;
+    border-radius: 0;
+}
+
+nav {
+    @apply flex gap-x-1;
+}
+
+nav a {
+    @apply text-xl p-1 rounded-none;
+    width: 2rem;
+    height: 2rem;
+    transition: all 0s ease;
+}
+
+/* form */
+.form-input {
+    @apply rounded-none bg-white;
+    transition: background 0s ease;
+    border-right: 2.25px solid #e1dad8;
+    border-bottom: 2.25px solid #e1dad8;
+    border-top: 2.25px solid #8b8a87;
+    border-left: 2.25px solid #8b8a87;
+}
+
+.form-input:hover {
+    @apply bg-white;
+    transition: background 0s ease;
+    border-right: 2.25px solid #e1dad8;
+    border-bottom: 2.25px solid #e1dad8;
+    border-top: 2.25px solid #8b8a87;
+    border-left: 2.25px solid #8b8a87;
+}
+
+.form-input:focus {
+    @apply bg-white;
+    outline: 2.25px solid #0a246a;
+    transition: all 0s ease;
+}
+
+.form-label {
+    color: black;
+}
+
+.form-checkbox {
+    @apply p-2;
+    border: 2.25px solid transparent;
+    transition: all 0s ease;
+}
+
+.form-checkbox:hover {
+    transition: all 0s ease;
+    color: black;
+    background: #d4d0c8;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+    border-bottom: 2.25px solid #8b8a87;
+    border-radius: 0;
+}
+
+.form-checkbox:active {
+    transition: all 0s ease;
+    color: black;
+    background: #d4d0c8;
+    border-right: 2.25px solid #e1dad8;
+    border-bottom: 2.25px solid #e1dad8;
+    border-top: 2.25px solid #8b8a87;
+    border-left: 2.25px solid #8b8a87;
+    border-radius: 0;
+}
+
+.form-checkbox div h3 {
+    @apply text-lg whitespace-nowrap truncate;
+}
+
+.form-checkbox div p {
+    @apply text-gray-600;
+}
+
+.form-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.form-checkbox-icon::before {
+    color: black;
+    @apply text-2xl;
+    font-family: "Material Symbols Outlined";
+    content: "check_box_outline_blank";
+}
+
+.form-checkbox input[type="checkbox"]:checked+.form-checkbox-icon {
+    font-variation-settings: 'FILL' 1;
+}
+
+.form-checkbox input[type="checkbox"]:checked+.form-checkbox-icon::before {
+    @apply text-2xl;
+    color: #0a246a;
+    font-family: "Material Symbols Outlined";
+    content: "check_box";
+}
+
+/* radio */
+.form-radio-group {
+    @apply border-t border-black p-2;
+}
+
+.form-radio {
+    @apply p-2;
+    transition: all 0s ease;
+    border: 2.25px solid transparent;
+}
+
+.form-radio:hover {
+    transition: all 0s ease;
+    color: black;
+    background: #d4d0c8;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+    border-bottom: 2.25px solid #8b8a87;
+    border-radius: 0;
+}
+
+.form-radio:active {
+    transition: all 0s ease;
+    color: black;
+    background: #d4d0c8;
+    border-right: 2.25px solid #e1dad8;
+    border-bottom: 2.25px solid #e1dad8;
+    border-top: 2.25px solid #8b8a87;
+    border-left: 2.25px solid #8b8a87;
+    border-radius: 0;
+}
+
+.form-radio p {
+    @apply ml-2;
+}
+
+
+.form-radio input[type="radio"] {
+    display: none;
+}
+
+.form-radio-icon::before {
+    @apply text-2xl;
+    color: black;
+    font-family: "Material Symbols Outlined";
+    content: "radio_button_unchecked";
+}
+
+.form-radio input[type="radio"]:checked+.form-radio-icon {
+    font-variation-settings: 'FILL' 1;
+}
+
+.form-radio input[type="radio"]:checked+.form-radio-icon::before {
+    @apply text-2xl;
+    color: #0a246a;
+    font-family: "Material Symbols Outlined";
+    content: "radio_button_checked";
+}
+
+.nothing p {
+    @apply text-gray-600;
+}
+
+.detail-title {
+    @apply border-b border-black;
+}
+
+.lst-item {
+    @apply border-black w-full p-2;
+}
+
+.lst-item div h3 {
+    @apply text-xl whitespace-nowrap truncate;
+}
+
+.lst-item div p {
+    @apply text-sm text-gray-600 whitespace-nowrap truncate;
+}
+
+.lst-item nav {
+    @apply flex gap-x-1;
+}
+
+.tags {
+    @apply flex gap-x-1;
+}
+
+.tags a {
+    @apply rounded-none py-1 px-3 text-sm text-black;
+    color: black;
+    background: #d4d0c8;
+    border-top: 2.25px solid #e1dad8;
+    border-left: 2.25px solid #e1dad8;
+    border-right: 2.25px solid #8b8a87;
+    border-bottom: 2.25px solid #8b8a87;
+    border-radius: 0;
+}
+
+.sigma {
+    @apply rounded-none text-black;
+    background: #d4d0c8;
+    border-right: 2.25px solid #e1dad8;
+    border-bottom: 2.25px solid #e1dad8;
+    border-top: 2.25px solid #8b8a87;
+    border-left: 2.25px solid #8b8a87;
+    width: 2.5rem;
+    height: 2.5rem;
+}
