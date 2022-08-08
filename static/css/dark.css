@@ -175,7 +175,3 @@ nav a:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
-
-.nothing img {
-  filter: invert(100%) hue-rotate(180deg);
-}

@@ -113,7 +113,3 @@ nav a:hover {
 .sigma {
     @apply bg-slate-900;
 }
-
-.nothing img {
-    filter: invert(100%) hue-rotate(180deg);
-}
