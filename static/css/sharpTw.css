@@ -13,15 +13,16 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    @apply bg-slate-500 rounded-full;
+    @apply bg-slate-500 rounded-sm;
     width: 7.5px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    @apply bg-slate-600 rounded-full;
+    @apply bg-slate-600 rounded-sm;
 }
 
 .bg-main {
+    @apply bg-indigo-500;
     background-image: url('../img/sharp.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,15 +32,17 @@
 
 .card {
     @apply rounded-sm;
-    animation: fade .2s ease;
+    animation: fade .25s ease;
 }
 
 @keyframes fade {
     from{
         opacity: 0;
+        transform: rotateX(30deg) translateY(-13.4%);
     }
     to{
         opacity: 1;
+        transform: rotateX(0) translateY(0);
     }
 }
 
