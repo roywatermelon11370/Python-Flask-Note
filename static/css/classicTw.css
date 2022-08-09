@@ -110,6 +110,11 @@ a:hover {
     color: #0a246a
 }
 
+.text-danger {
+    @apply text-red-500;
+}
+
+
 .btn {
     @apply rounded-none p-2;
     line-height: 1.2rem;
@@ -354,7 +359,7 @@ nav a {
     content: "radio_button_checked";
 }
 
-.nothing p {
+.nothing > p {
     @apply text-gray-600;
 }
 

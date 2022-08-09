@@ -61,7 +61,11 @@ a:hover {
 }
 
 .text-primary {
-    @apply text-blue-500
+    @apply text-blue-500;
+}
+
+.text-danger {
+    @apply text-rose-500;
 }
 
 .btn {

@@ -83,9 +83,14 @@ def manage():
 @app.route("/manageAction", methods=['POST'])
 def manageAction():
     checkedId=request.form.getlist('noteitem')
+    if checkedId==[]:
+        flash('Nothing checked!')
+        return redirect('/manage')
+    
     for i in checkedId:
         curr=findItemById(int(i))
         notelst.remove(curr)
+    
     return redirect('/')
 
 
@@ -121,5 +126,7 @@ def search():
     return  render_template('search.html',keyword=False,resultlst=False, setts=setts)
  
 
-if __name__=='__main__':
-	app.run('localhost',9000,debug=True)
+if __name__ == '__main__':
+    app.debug = True
+    app.secret_key = "4712"
+    app.run('localhost',9000)

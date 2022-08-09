@@ -125,6 +125,11 @@ a:hover {
   color: #0a246a
 }
 
+.text-danger {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
 .btn {
   border-radius: 0px;
   padding: 0.5rem;
@@ -392,7 +397,7 @@ nav a {
   content: "radio_button_checked";
 }
 
-.nothing p {
+.nothing > p {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }

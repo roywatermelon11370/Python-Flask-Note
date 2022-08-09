@@ -641,6 +641,11 @@ a:hover {
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
+.text-danger {
+  --tw-text-opacity: 1;
+  color: rgb(244 63 94 / var(--tw-text-opacity));
+}
+
 .btn {
   display: inline-block;
   border-radius: 9999px;

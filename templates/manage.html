@@ -37,6 +37,13 @@
                     <button type="reset" class="btn btn-secondary"><span class="mso">close</span><p>Clear</p></button>
                     <button type="submit" class="btn btn-danger"><span class="mso">delete</span><p>Delete</p></button>
                 </div>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for i in messages %}
+                <p class="text-danger p-2">{{i}}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
 
                 {% for noteitem in notelst %}
                 <label class="form-checkbox">
@@ -62,6 +69,7 @@
             {% endif %}
         </section>
     </div>
+    <p class="text-danger"></p>
 </body>
 
 </html>
