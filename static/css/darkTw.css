@@ -26,7 +26,7 @@
 }
 
 nav a:hover {
-    @apply bg-sky-800;
+    @apply bg-blue-800;
 }
 
 .card {
@@ -39,12 +39,12 @@ nav a:hover {
 
 .btn-white {
     transition: all .2s ease;
-    @apply bg-slate-800 text-sky-500;
+    @apply bg-slate-800 text-blue-500;
 }
 
 .btn-white:hover {
     transition: all .2s ease;
-    @apply bg-slate-700 text-sky-500 cursor-pointer;
+    @apply bg-slate-700 text-blue-500 cursor-pointer;
 }
 
 .btn-secondary {
@@ -107,7 +107,7 @@ nav a:hover {
 }
 
 .tags a {
-    @apply rounded-full py-1 px-3 text-sm text-sky-500 bg-sky-700;
+    @apply rounded-full py-1 px-3 text-sm text-blue-500 bg-blue-700;
 }
 
 .sigma {

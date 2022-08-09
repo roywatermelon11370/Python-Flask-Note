@@ -120,6 +120,21 @@ a:hover {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.btn-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(99 102 241 / var(--tw-text-opacity));
+}
+
+.btn-white:hover {
+  cursor: pointer;
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 210 254 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(99 102 241 / var(--tw-text-opacity));
+}
+
 .header {
   margin-top: 1.25rem;
   border-radius: 0.125rem;

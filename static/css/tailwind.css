@@ -8,7 +8,7 @@
 }
 
 *::selection {
-    @apply bg-sky-500 text-white;
+    @apply bg-blue-500 text-white;
 }
 
 *::-webkit-scrollbar {
@@ -53,15 +53,15 @@
 }
 
 a {
-    @apply text-sky-500 inline-block;
+    @apply text-blue-500 inline-block;
 }
 
 a:hover {
-    @apply text-sky-600 cursor-pointer;
+    @apply text-blue-600 cursor-pointer;
 }
 
 .text-primary {
-    @apply text-sky-500
+    @apply text-blue-500
 }
 
 .btn {
@@ -79,6 +79,10 @@ a:hover {
     font-size: 1.2rem
 }
 
+.btn p {
+    @apply inline-block;
+}
+
 .btn-actionbar {
     @apply text-slate-500;
 }
@@ -89,12 +93,12 @@ a:hover {
 
 .btn-primary {
     transition: all .2s ease;
-    @apply bg-sky-500 text-white;
+    @apply bg-blue-500 text-white;
 }
 
 .btn-primary:hover {
     transition: all .2s ease;
-    @apply bg-sky-600 text-white cursor-pointer;
+    @apply bg-blue-600 text-white cursor-pointer;
 }
 
 .btn-danger {
@@ -109,12 +113,12 @@ a:hover {
 
 .btn-white {
     transition: all .2s ease;
-    @apply bg-white text-sky-500;
+    @apply bg-white text-blue-500;
 }
 
 .btn-white:hover {
     transition: all .2s ease;
-    @apply bg-sky-200 text-sky-500 cursor-pointer;
+    @apply bg-blue-200 text-blue-500 cursor-pointer;
 }
 
 .btn-secondary {
@@ -140,7 +144,7 @@ nav a {
 }
 
 nav a:hover {
-    @apply bg-sky-100;
+    @apply bg-blue-100;
 }
 
 nav a:active {
@@ -170,7 +174,7 @@ nav a:active {
 }
 
 .index-title-primary {
-    @apply text-sky-500;
+    @apply text-blue-500;
 }
 
 /* card */
@@ -195,8 +199,7 @@ nav a:active {
 }
 
 .form-input:focus {
-    @apply bg-white;
-    outline: 2.25px solid #0ea5e9;
+    @apply bg-white outline-blue-500;
     transition: all .2s ease;
 }
 
@@ -257,7 +260,7 @@ nav a:active {
 }
 
 .form-checkbox input[type="checkbox"]:checked+.form-checkbox-icon::before {
-    @apply text-sky-500 text-2xl;
+    @apply text-blue-500 text-2xl;
     font-family: "Material Symbols Outlined";
     content: "check_box";
 }
@@ -296,7 +299,7 @@ nav a:active {
 }
 
 .form-radio input[type="radio"]:checked+.form-radio-icon::before {
-    @apply text-sky-500 text-2xl;
+    @apply text-blue-500 text-2xl;
     font-family: "Material Symbols Outlined";
     content: "radio_button_checked";
 }
@@ -347,7 +350,7 @@ pre {
     @apply text-2xl;
 }
 
-.nothing p {
+.nothing > p {
     @apply text-slate-500;
 }
 
@@ -372,11 +375,11 @@ pre {
 }
 
 .tags a {
-    @apply rounded-full py-1 px-3 text-sm text-sky-500 bg-sky-100;
+    @apply rounded-full py-1 px-3 text-sm text-blue-500 bg-blue-100;
 }
 
 .sigma {
-    @apply flex justify-center items-center mr-3 text-sky-500 bg-slate-100 text-2xl relative rounded-lg;
+    @apply flex justify-center items-center mr-3 text-blue-500 bg-slate-100 text-2xl relative rounded-lg;
     width: 2.5rem;
     height: 2.5rem;
 }

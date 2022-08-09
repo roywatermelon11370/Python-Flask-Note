@@ -32,8 +32,8 @@
             {% if notelst|length != 0 %}
             <div id="notes">
                 <div class="func-bar">
-                    <a href="manage" class="btn btn-secondary"><span class="mso">tune</span>Manage</a>
-                    <a href="add" class="btn btn-primary"><span class="mso">add</span>Add Note</a>
+                    <a href="manage" class="btn btn-secondary"><span class="mso">tune</span><p>Manage</p></a>
+                    <a href="add" class="btn btn-primary"><span class="mso">add</span><p>Add Note</p></a>
                 </div>
                 {% for noteitem in notelst %}
                 <div class="lst-item">
@@ -60,7 +60,7 @@
                 <img src="{{ url_for('static', filename='img/blank.svg') }}" alt="Blank">
                 <h3>Nothing added</h3>
                 <p>Try adding something new!</p>
-                <a href="add" class="btn btn-primary mt-5"><span class="mso">add</span>Add Note</a>
+                <a href="add" class="btn btn-primary mt-5"><span class="mso">add</span><p>Add Note</p></a>
             </div>
             {% endif %}
         </section>

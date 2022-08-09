@@ -80,6 +80,14 @@ a:hover {
     @apply bg-indigo-600 text-white cursor-pointer;
 }
 
+.btn-white {
+    @apply bg-white text-indigo-500;
+}
+
+.btn-white:hover {
+    @apply bg-indigo-200 text-indigo-500 cursor-pointer;
+}
+
 .header {
     @apply mt-5 bg-slate-800 rounded-sm text-white;
 }

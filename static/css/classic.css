@@ -118,7 +118,7 @@ a {
 a:hover {
   cursor: pointer;
   --tw-text-opacity: 1;
-  color: rgb(2 132 199 / var(--tw-text-opacity));
+  color: rgb(8 145 178 / var(--tw-text-opacity));
 }
 
 .text-primary {
@@ -138,6 +138,13 @@ a:hover {
 
 .btn:active {
   transition: all 0s ease;
+  transform: none;
+}
+
+.btn:active span,
+nav a:active span,
+.btn:active p {
+  transform: translate(1px, 1px);
 }
 
 .btn .mso {
@@ -180,6 +187,7 @@ nav a:hover {
 .btn-white:active,
 nav a:active {
   transition: all 0s ease;
+  transform: none;
   color: black;
   background: #d4d0c8;
   border-right: 2.25px solid #e1dad8;
@@ -274,6 +282,10 @@ nav a {
   border-radius: 0;
 }
 
+.form-checkbox:active * {
+  transform: translate(1px, 1px)
+}
+
 .form-checkbox div h3 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -346,6 +358,10 @@ nav a {
   border-top: 2.25px solid #8b8a87;
   border-left: 2.25px solid #8b8a87;
   border-radius: 0;
+}
+
+.form-radio:active * {
+  transform: translate(1px, 1px)
 }
 
 .form-radio p {
