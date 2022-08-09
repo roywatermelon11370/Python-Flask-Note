@@ -12,12 +12,12 @@
 }
 
 *::-webkit-scrollbar {
-    @apply bg-slate-100;
+    @apply bg-slate-200;
     width: 7.5px;
 }
 
 *::-webkit-scrollbar:hover {
-    @apply bg-slate-200;
+    @apply bg-slate-300;
     width: 7.5px;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .bg-main {
-    @apply bg-slate-100;
+    @apply bg-slate-200;
     min-height: 100vh;
 }
 
@@ -123,12 +123,12 @@ a:hover {
 
 .btn-secondary {
     transition: all .2s ease;
-    @apply bg-slate-100 text-slate-900;
+    @apply bg-slate-200 text-slate-900;
 }
 
 .btn-secondary:hover {
     transition: all .2s ease;
-    @apply bg-slate-200 text-slate-900 cursor-pointer;
+    @apply bg-slate-300 text-slate-900 cursor-pointer;
 }
 
 /* nav */
@@ -144,7 +144,7 @@ nav a {
 }
 
 nav a:hover {
-    @apply bg-blue-100;
+    @apply bg-blue-200;
 }
 
 nav a:active {
@@ -379,7 +379,7 @@ pre {
 }
 
 .sigma {
-    @apply flex justify-center items-center mr-3 text-blue-500 bg-slate-100 text-2xl relative rounded-lg;
+    @apply flex justify-center items-center mr-3 text-blue-500 bg-slate-200 text-2xl relative rounded-lg;
     width: 2.5rem;
     height: 2.5rem;
 }

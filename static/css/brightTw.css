@@ -1,0 +1,17 @@
+.bg-main {
+    @apply bg-white;
+}
+
+*::-webkit-scrollbar {
+    @apply bg-white;
+    width: 7.5px;
+}
+
+*::-webkit-scrollbar:hover {
+    @apply bg-slate-100;
+    width: 7.5px;
+}
+
+.card {
+    @apply border border-slate-200;
+}

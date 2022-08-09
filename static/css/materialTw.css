@@ -1,5 +1,5 @@
 *::selection {
-    @apply bg-teal-500 text-white;
+    @apply bg-sky-500 text-white;
 }
 
 *::-webkit-scrollbar {
@@ -22,23 +22,23 @@
 }
 
 a {
-    @apply text-teal-500 inline-block;
+    @apply text-sky-500 inline-block;
 }
 
 a:hover {
-    @apply text-teal-600 cursor-pointer;
+    @apply text-sky-600 cursor-pointer;
 }
 
 nav a:hover {
-    @apply bg-teal-200;
+    @apply bg-sky-200;
 }
 
 .index-title-primary {
-    @apply text-teal-500;
+    @apply text-sky-500;
 }
 
 .text-primary {
-    @apply text-teal-500
+    @apply text-sky-500
 }
 
 .bg-main {
@@ -46,7 +46,7 @@ nav a:hover {
 }
 
 .card {
-    @apply shadow-lg;
+    @apply shadow-md rounded-md;
 }
 
 .btn {
@@ -54,7 +54,7 @@ nav a:hover {
 }
 
 .btn:hover {
-    @apply shadow-lg;
+    @apply shadow-md;
 }
 
 .btn:active {
@@ -62,11 +62,11 @@ nav a:hover {
 }
 
 .btn-primary {
-    @apply bg-teal-500;
+    @apply bg-sky-500;
 }
 
 .btn-primary:hover {
-    @apply bg-teal-600;
+    @apply bg-sky-600;
 }
 
 .btn-secondary {
@@ -78,36 +78,35 @@ nav a:hover {
 }
 
 .btn-white {
-    @apply bg-white text-teal-500;
+    @apply bg-white text-sky-500;
 }
 
 .btn-white:hover {
     transition: all .2s ease;
-    @apply bg-teal-200 text-teal-500 cursor-pointer;
+    @apply bg-sky-200 text-sky-500 cursor-pointer;
 }
 
 .form-input {
-    @apply rounded-lg;
+    @apply rounded-md;
 }
 
 .form-input:focus {
-    @apply bg-white;
-    outline: 2.25px solid #06b6d4;
+    @apply bg-white outline-sky-500;
     transition: all .2s ease;
 }
 
 .form-checkbox input[type="checkbox"]:checked+.form-checkbox-icon::before {
-    @apply text-teal-500 text-2xl;
+    @apply text-sky-500 text-2xl;
 }
 
 .form-radio input[type="radio"]:checked+.form-radio-icon::before {
-    @apply text-teal-500 text-2xl;
+    @apply text-sky-500 text-2xl;
 }
 
 .tags a {
-    @apply rounded-full py-1 px-3 text-sm text-teal-500 bg-teal-100;
+    @apply rounded-full py-1 px-3 text-sm text-sky-500 bg-sky-100;
 }
 
 .sigma {
-    @apply bg-slate-200 rounded-md text-teal-500;
+    @apply bg-slate-200 rounded-md text-sky-500;
 }

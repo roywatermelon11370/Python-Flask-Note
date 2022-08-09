@@ -61,6 +61,13 @@
                         <span class="form-radio-icon"></span>
                         <p>Dark</p>
                     </label>
+                    
+                    <label for="bright" class="form-radio">
+                        <input type="radio" name="theme" id="bright" value="bright" {% if setts.theme=='bright'
+                            %}checked{% endif %}>
+                        <span class="form-radio-icon"></span>
+                        <p>Bright</p>
+                    </label>
 
                     <label for="classic" class="form-radio">
                         <input type="radio" name="theme" id="classic" value="classic" {% if setts.theme=='classic'
