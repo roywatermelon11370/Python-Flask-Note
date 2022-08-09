@@ -135,6 +135,11 @@ a:hover {
   color: rgb(99 102 241 / var(--tw-text-opacity));
 }
 
+.marked {
+  --tw-text-opacity: 1;
+  color: rgb(99 102 241 / var(--tw-text-opacity));
+}
+
 .header {
   margin-top: 1.25rem;
   border-radius: 0.125rem;

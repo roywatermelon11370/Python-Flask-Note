@@ -43,7 +43,7 @@ nav a:hover {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
-.detail-title {
+.#note-detail .func-bar {
   --tw-border-opacity: 1;
   border-color: rgb(71 85 105 / var(--tw-border-opacity));
 }

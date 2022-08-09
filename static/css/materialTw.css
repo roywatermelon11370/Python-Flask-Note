@@ -86,6 +86,10 @@ nav a:hover {
     @apply bg-sky-200 text-sky-500 cursor-pointer;
 }
 
+.marked {
+    @apply text-sky-500;
+}
+
 .form-input {
     @apply rounded-md;
 }

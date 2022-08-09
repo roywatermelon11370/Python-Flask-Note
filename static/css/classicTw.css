@@ -204,6 +204,10 @@ nav a {
     transition: all 0s ease;
 }
 
+.marked {
+    color: #000;
+}
+
 /* form */
 .form-input {
     @apply rounded-none bg-white;
@@ -359,11 +363,11 @@ nav a {
     content: "radio_button_checked";
 }
 
-.nothing > p {
+.nothing>p {
     @apply text-gray-600;
 }
 
-.detail-title {
+.#note-detail .func-bar {
     @apply border-b border-black;
 }
 

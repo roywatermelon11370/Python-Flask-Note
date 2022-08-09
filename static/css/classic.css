@@ -225,6 +225,10 @@ nav a {
   transition: all 0s ease;
 }
 
+.marked {
+  color: #000;
+}
+
 /* form */
 
 .form-input {
@@ -397,12 +401,12 @@ nav a {
   content: "radio_button_checked";
 }
 
-.nothing > p {
+.nothing>p {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
-.detail-title {
+.#note-detail .func-bar {
   border-bottom-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));

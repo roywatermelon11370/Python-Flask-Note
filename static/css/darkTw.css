@@ -33,7 +33,7 @@ nav a:hover {
     @apply bg-slate-800;
 }
 
-.detail-title {
+.#note-detail .func-bar {
     @apply border-slate-600;
 }
 

@@ -1,7 +1,8 @@
 from flask import Flask,render_template,request,redirect,url_for,flash
 app=Flask(__name__)
 notelst=[]
-noteTem={'id':'','ttle':'','conten':'','tgs':[]}
+markedNotelstInd=[]
+noteTem={'id':'','ttle':'','conten':'','tgs':()}
 setts={'rmAnim' : False, 'theme':'light'}
 
 
@@ -46,10 +47,20 @@ def addAction():
     return redirect('/')
 
 
+@app.route("/markAction/<int:markId>")
+def markAction(markId):
+    if markId in markedNotelstInd:
+        markedNotelstInd.remove(markId)
+    else:
+        markedNotelstInd.append(markId)
+    markedNotelstInd.sort()
+    return redirect('/detail/{}'.format(markId))
+
+
 @app.route("/detail/<int:addId>", methods=['GET'])
 def ShowDetail(addId):
     curr=findItemById(addId)
-    return render_template('detail.html',noteitem=curr, setts=setts)
+    return render_template('detail.html',noteitem=curr, setts=setts, markedNotelstInd=markedNotelstInd)
 
 
 @app.route("/edit/<int:editId>", methods=['GET'])
@@ -78,6 +89,16 @@ def editAction():
 @app.route("/manage")
 def manage():
     return render_template('manage.html', notelst=notelst, setts=setts)
+
+
+@app.route("/manage/<keyWord>")
+def manageKey(keyWord):
+    results=[]
+    for i in notelst:
+        for j in i['tags']:
+            if j==keyWord:
+                results.append(i)
+    return render_template('manage.html',notelst=results,setts=setts)
 
 
 @app.route("/manageAction", methods=['POST'])
@@ -122,9 +143,21 @@ def search():
             for j in i['tags']:
                 if j==keyWord:
                     results.append(i)
-        return render_template('search.html',resultlst=results,keyword=keyWord,setts=setts)
-    return  render_template('search.html',keyword=False,resultlst=False, setts=setts)
- 
+        return render_template('search.html',resultlst=results,keyword=keyWord,setts=setts,marked=False)
+    return  render_template('search.html',keyword=False,resultlst=False, setts=setts,marked=False)
+
+
+@app.route("/search/marked")
+def showMarked():
+    markedNotelst=[]
+    for i in markedNotelstInd:
+        for j in notelst:
+            if j['id']==int(i):
+                markedNotelst.append(j)
+
+    return render_template('search.html',setts=setts,markedNotelst=markedNotelst,marked=True)
+
+
 
 if __name__ == '__main__':
     app.debug = True

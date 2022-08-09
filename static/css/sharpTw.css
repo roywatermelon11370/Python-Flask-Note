@@ -88,6 +88,10 @@ a:hover {
     @apply bg-indigo-200 text-indigo-500 cursor-pointer;
 }
 
+.marked {
+    @apply text-indigo-500;
+}
+
 .header {
     @apply mt-5 bg-slate-800 rounded-sm text-white;
 }

@@ -32,7 +32,10 @@
             {% if notelst|length != 0 %}
             <div id="notes">
                 <div class="func-bar">
-                    <a href="manage" class="btn btn-secondary"><span class="mso">tune</span><p>Manage</p></a>
+                    <div class="flex gap-x-2">
+                        <a href="/manage" class="btn btn-secondary"><span class="mso">tune</span><p>Manage</p></a>
+                        <a href="/search/marked" class="btn btn-secondary"><span class="mso">bookmark</span><p>Marked</p></a>
+                    </div>
                     <a href="add" class="btn btn-primary"><span class="mso">add</span><p>Add Note</p></a>
                 </div>
                 {% for noteitem in notelst %}

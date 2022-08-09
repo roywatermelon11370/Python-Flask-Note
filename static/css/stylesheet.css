@@ -749,6 +749,12 @@ a:hover {
   color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 
+.marked {
+  font-variation-settings: 'FILL' 1;
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
 /* nav */
 
 nav {
@@ -789,10 +795,18 @@ nav a:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding: 0.75rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#note-detail .func-bar {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240 / var(--tw-border-opacity));
 }
 
 /* header */
@@ -837,14 +851,6 @@ nav a:active {
   padding: 0.75rem;
   -webkit-animation: fade-in 0.2s ease-out;
           animation: fade-in 0.2s ease-out;
-}
-
-.detail-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom-width: 1px;
-  padding: 0.5rem;
 }
 
 /* form */
@@ -1112,6 +1118,7 @@ pre {
 }
 
 .lst-item {
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -1141,6 +1148,9 @@ pre {
 }
 
 .lst-item nav {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
   display: flex;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
@@ -1295,6 +1305,10 @@ pre {
 .gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
 }
 
 .rounded-lg {
