@@ -208,6 +208,10 @@ nav a {
     color: #000;
 }
 
+#note-detail .func-bar {
+    @apply border-black;
+}
+
 /* form */
 .form-input {
     @apply rounded-none bg-white;

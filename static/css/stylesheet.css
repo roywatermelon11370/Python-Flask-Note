@@ -1158,11 +1158,14 @@ pre {
 
 .tags {
   display: flex;
+  flex-wrap: wrap;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
+  row-gap: 0.5rem;
 }
 
 .tags a {
+  white-space: nowrap;
   border-radius: 9999px;
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));

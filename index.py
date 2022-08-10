@@ -25,7 +25,7 @@ def findItemById(x):
 
 @app.route("/")
 def index():
-    return render_template('index.html', notelst=notelst, setts=setts)
+    return render_template('index.html', notelst=notelst, setts=setts, markedNotelstInd=markedNotelstInd)
 
 
 @app.route("/add")
@@ -51,16 +51,19 @@ def addAction():
 def markAction(markId):
     if markId in markedNotelstInd:
         markedNotelstInd.remove(markId)
+        markedNotelstInd.sort()
+        return {'marked':False}
     else:
         markedNotelstInd.append(markId)
-    markedNotelstInd.sort()
-    return redirect('/detail/{}'.format(markId))
+        markedNotelstInd.sort()
+        return {'marked':True}
+    
 
 
 @app.route("/detail/<int:addId>", methods=['GET'])
 def ShowDetail(addId):
     curr=findItemById(addId)
-    return render_template('detail.html',noteitem=curr, setts=setts, markedNotelstInd=markedNotelstInd)
+    return render_template('detail.html',noteitem=curr,currId=addId, setts=setts, markedNotelstInd=markedNotelstInd)
 
 
 @app.route("/edit/<int:editId>", methods=['GET'])
@@ -91,8 +94,21 @@ def manage():
     return render_template('manage.html', notelst=notelst, setts=setts)
 
 
-@app.route("/manage/<keyWord>")
-def manageKey(keyWord):
+@app.route("/manage/marked")
+def manageMarked():
+    markedNotelst=[]
+    for i in markedNotelstInd:
+        for j in notelst:
+            if j['id']==int(i):
+                markedNotelst.append(j)
+
+    return render_template('manage.html',setts=setts,notelst=markedNotelst,marked=True)
+
+
+
+@app.route("/manage/search", methods=['GET'])
+def manageKey():
+    keyWord=request.args.get('keyword')
     results=[]
     for i in notelst:
         for j in i['tags']:
@@ -143,7 +159,7 @@ def search():
             for j in i['tags']:
                 if j==keyWord:
                     results.append(i)
-        return render_template('search.html',resultlst=results,keyword=keyWord,setts=setts,marked=False)
+        return render_template('search.html',resultlst=results,keyword=keyWord,setts=setts,marked=False, markedNotelstInd=markedNotelstInd)
     return  render_template('search.html',keyword=False,resultlst=False, setts=setts,marked=False)
 
 

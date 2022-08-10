@@ -22,7 +22,7 @@
     <div class="w-full md:w-2/3 lg:w-1/2">
         <header class="header">
             <nav>
-                <a onClick="javascript:history.back()"><span class="mso">arrow_back</span></a>
+                <a href='/'><span class="mso">arrow_back</span></a>
             </nav>
             <h1>Edit Note</h1>
             <nav>
@@ -54,8 +54,12 @@
                         <a href="/delete/{{noteitem.id}}" class="btn btn-white">Delete this Note</a>
                     </div>
                     <div class="flex gap-x-2">
-                        <button type="reset" class="btn btn-secondary"><p>Reset</p></button>
-                        <button type="submit" class="btn btn-primary"><p>Save</p></button>
+                        <button type="reset" class="btn btn-secondary">
+                            <p>Reset</p>
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <p>Save</p>
+                        </button>
                     </div>
                 </div>
             </form>

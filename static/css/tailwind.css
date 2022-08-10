@@ -387,11 +387,11 @@ pre {
 }
 
 .tags {
-    @apply flex gap-x-2;
+    @apply flex gap-x-2 flex-wrap gap-y-2;
 }
 
 .tags a {
-    @apply rounded-full py-1 px-3 text-sm text-blue-500 bg-blue-100;
+    @apply rounded-full py-1 px-3 text-sm text-blue-500 bg-blue-100 whitespace-nowrap;
 }
 
 .sigma {

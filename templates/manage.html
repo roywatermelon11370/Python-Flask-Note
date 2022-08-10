@@ -22,9 +22,9 @@
     <div class="w-full md:w-2/3 lg:w-1/2">
         <header class="header">
             <nav>
-                <a onClick="javascript:history.back()"><span class="mso">arrow_back</span></a>
+                <a href='/'><span class="mso">arrow_back</span></a>
             </nav>
-            <h1>Manage Notes</h1>
+            <h1>Manage{% if marked %} Marked{% endif %} Notes</h1>
             <nav>
                 <a href="/search"><span class="mso">search</span></a>
             </nav>
@@ -32,10 +32,14 @@
 
         <section class="card">
             {% if notelst|length != 0 %}
-            <form action="/manageAction" method="post">
+            <form id="manageForm" action="/manageAction" method="post">
                 <div class="func-bar">
-                    <button type="reset" class="btn btn-secondary"><span class="mso">close</span><p>Clear</p></button>
-                    <button type="submit" class="btn btn-danger"><span class="mso">delete</span><p>Delete</p></button>
+                    <button type="reset" class="btn btn-secondary"><span class="mso">close</span>
+                        <p>Clear</p>
+                    </button>
+                    <button id="delBtn" type="submit" onclick="sent()" class="btn btn-danger"><span class="mso">delete</span>
+                        <p>Delete</p>
+                    </button>
                 </div>
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
@@ -46,7 +50,7 @@
                 {% endwith %}
 
                 {% for noteitem in notelst %}
-                <label class="form-checkbox">
+                <label id="{{noteitem.id}}" class="form-checkbox">
                     <div>
                         <h3>{{noteitem.title}}</h3>
                         <p>{{noteitem.content}}</p>
@@ -71,5 +75,24 @@
     </div>
     <p class="text-danger"></p>
 </body>
+
+<script>
+    // function sent() {
+    //     document.getElementById('delBtn').preventDefault();
+    //     const manageUrl = {{ url_for("manageAction") | tojson }};
+    //     var ManFormData=new FormData(document.getElementById('ManageForm'));
+    //     fetch(manageUrl, {"method": "POST","body": ManFormData,}).then(Response => Response.json()).then(data=>{
+    //         if(data=='Nothing') {
+    //             continue;
+    //         }
+    //         else{
+    //             var lstLen=data.length;
+    //             for(i=0,i<=lstLen,i++) {
+    //                 document.getElementById(i).remove();
+    //             }
+    //         }
+    //     })
+    // }
+</script>
 
 </html>

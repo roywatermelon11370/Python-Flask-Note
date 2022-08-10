@@ -22,7 +22,7 @@
     <div class="w-full md:w-2/3 lg:w-1/2">
         <header class="header">
             <nav>
-                <a onClick="javascript:history.back()"><span class="mso">arrow_back</span></a>
+                <a href='/'><span class="mso">arrow_back</span></a>
             </nav>
             <h1>Detail</h1>
             <nav>
@@ -39,7 +39,9 @@
                     </div>
 
                     <nav>
-                        <a href="/markAction/{{noteitem.id}}"><span class="mso {% if noteitem.id in markedNotelstInd %}marked{% endif %}">bookmark</span></a>
+                        <a id="markBtn" onclick="markAct()"
+                            class="{% if noteitem.id in markedNotelstInd %}marked{% endif %}"><span
+                                class="mso">bookmark</span></a>
                         <a href="/edit/{{noteitem.id}}"><span class="mso">edit</span></a>
                         <a href="/delete/{{noteitem.id}}"><span class="mso">delete</span></a>
                     </nav>
@@ -65,5 +67,20 @@
         </section>
     </div>
 </body>
+
+<script>
+    const markUrl = {{ url_for("markAction", markId = currId) | tojson }};
+    function markAct() {
+        fetch(markUrl).then(Response => Response.json()).then(data => {
+            if (data['marked']) {
+                document.getElementById('markBtn').classList.add('marked');
+            }
+            else {
+                document.getElementById('markBtn').classList.remove('marked');
+            }
+        });
+    }
+
+</script>
 
 </html>

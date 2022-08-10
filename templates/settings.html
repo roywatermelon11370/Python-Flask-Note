@@ -22,7 +22,7 @@
     <div class="w-full md:w-2/3 lg:w-1/2">
         <header class="header">
             <nav>
-                <a onClick="javascript:history.back()"><span class="mso">arrow_back</span></a>
+                <a href='/'><span class="mso">arrow_back</span></a>
             </nav>
             <h1 class="">Settings</h1>
             <nav>
@@ -33,8 +33,12 @@
         <section class="card">
             <form action="/settingsSave" method="post">
                 <div class="func-bar">
-                    <button type="reset" class="btn btn-secondary"><span class="mso">close</span><p>Reset</p></button>
-                    <button type="submit" class="btn btn-primary"><span class="mso">check</span><p>Save</p></button>
+                    <button type="reset" class="btn btn-secondary"><span class="mso">close</span>
+                        <p>Reset</p>
+                    </button>
+                    <button type="submit" class="btn btn-primary"><span class="mso">check</span>
+                        <p>Save</p>
+                    </button>
                 </div>
 
                 <!-- <label class="form-checkbox">
@@ -61,7 +65,7 @@
                         <span class="form-radio-icon"></span>
                         <p>Dark</p>
                     </label>
-                    
+
                     <label for="bright" class="form-radio">
                         <input type="radio" name="theme" id="bright" value="bright" {% if setts.theme=='bright'
                             %}checked{% endif %}>
@@ -84,8 +88,8 @@
                     </label>
 
                     <label for="sharp" class="form-radio">
-                        <input type="radio" name="theme" id="sharp" value="sharp" {% if setts.theme=='sharp'
-                            %}checked{% endif %}>
+                        <input type="radio" name="theme" id="sharp" value="sharp" {% if setts.theme=='sharp' %}checked{%
+                            endif %}>
                         <span class="form-radio-icon"></span>
                         <p>Sharp</p>
                     </label>
@@ -115,7 +119,7 @@
         tapTimes = tapTimes + 1;
         console.log(tapTimes);
         if (tapTimes > 4) {
-            d1.innerHTML = '<section class="card mt-5 text-center"><img src="{{ url_for("static", filename="img/cat.jpg") }}" alt="cat" class="rounded-lg"><p class="mt-2 text-slate-500">A cat slept lazily in a parking lot</p></section>';
+            d1.innerHTML = '<section class="card mt-5 text-center"><img src="{{ url_for("static", filename="img/cat.jpg") }}" alt="cat" class="rounded-lg"><p class="mt-2 text-slate-500">A cat sleeping lazily in a parking lot</p></section>';
         }
     }
 

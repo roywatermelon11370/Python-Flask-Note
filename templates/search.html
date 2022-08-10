@@ -22,7 +22,7 @@
     <div class="w-full md:w-2/3 lg:w-1/2">
         <header class="header">
             <nav>
-                <a onClick="javascript:history.back()"><span class="mso">arrow_back</span></a>
+                <a href='/'><span class="mso">arrow_back</span></a>
             </nav>
             <h1>{% if marked %}Marked Notes{% endif %}{% if not marked %}Search{% endif %}</h1>
             <nav>
@@ -57,7 +57,7 @@
             <div class="func-bar">
                 <p class="form-label"><span class="mso">manage_search</span> Results</p>
                 <nav>
-                    <a href="/manage/{{keyword}}">
+                    <a href="/manage/search?keyword={{keyword}}">
                         <span class="mso">tune</span>
                     </a>
                 </nav>
@@ -77,7 +77,10 @@
                     </div>
 
                     <nav>
-                        <a href="/detail/{{noteitem.id}}"><span class="mso">arrow_forward</span></a>
+                        <a id="markBtn{{noteitem.id}}" onclick="markAct({{noteitem.id}})"
+                            class="{% if noteitem.id in markedNotelstInd %}marked{% endif %}"><span
+                                class="mso">bookmark</span></a>
+                        <a href="detail/{{noteitem.id}}"><span class="mso">arrow_forward</span></a>
                     </nav>
                 </div>
                 {% endfor %}
@@ -98,6 +101,11 @@
         <section class="card">
             <div class="func-bar">
                 <p class="form-label"><span class="mso">manage_search</span> Results</p>
+                <nav>
+                    <a href="/manage/marked">
+                        <span class="mso">tune</span>
+                    </a>
+                </nav>
             </div>
             {% if markedNotelst|length !=0 %}
             <div class="note-lst">
@@ -114,6 +122,8 @@
                     </div>
 
                     <nav>
+                        <a id="markBtn{{noteitem.id}}" onclick="markAct({{noteitem.id}})" class="marked"><span
+                                class="mso">bookmark</span></a>
                         <a href="/detail/{{noteitem.id}}"><span class="mso">arrow_forward</span></a>
                     </nav>
                 </div>
@@ -132,5 +142,19 @@
         {% endif %}
     </div>
 </body>
+
+<script>
+    function markAct(x) {
+        const markUrl = '/markAction/'.concat(x);
+        fetch(markUrl).then(Response => Response.json()).then(data => {
+            if (data['marked']) {
+                document.getElementById('markBtn'.concat(x)).classList.add('marked');
+            }
+            else {
+                document.getElementById('markBtn'.concat(x)).classList.remove('marked');
+            }
+        });
+    }
+</script>
 
 </html>

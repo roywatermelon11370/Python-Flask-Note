@@ -51,6 +51,8 @@
                     </div>
 
                     <nav>
+                        <a id="markBtn{{noteitem.id}}" onclick="markAct({{noteitem.id}})" class="{% if noteitem.id in markedNotelstInd %}marked{% endif %}"><span
+                            class="mso">bookmark</span></a>
                         <a href="detail/{{noteitem.id}}"><span class="mso">arrow_forward</span></a>
                     </nav>
                 </div>
@@ -71,17 +73,18 @@
 </body>
 
 <script>
-    // function hidd() {
-    //     var NoteCount = '{{ notelst|length }}';
-    //     console.log(NoteCount);
-    //     if (NoteCount == 0) {
-    //         console.log('h');
-    //         document.getElementById('notes').classList.add('hidden');
-    //         document.getElementById('nothing').classList.remove('hidden');
-    //     }
-    // }
+    function markAct(x) {
+        const markUrl='/markAction/'.concat(x);
+        fetch(markUrl).then(Response => Response.json()).then(data => {
+            if(data['marked']) {
+                document.getElementById('markBtn'.concat(x)).classList.add('marked');
+            }
+            else {
+                document.getElementById('markBtn'.concat(x)).classList.remove('marked');
+            }
+        });
+    }
 
-    // hidd();
 </script>
 
 </html>
