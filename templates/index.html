@@ -33,10 +33,16 @@
             <div id="notes">
                 <div class="func-bar">
                     <div class="flex gap-x-2">
-                        <a href="/manage" class="btn btn-secondary"><span class="mso">tune</span><p>Manage</p></a>
-                        <a href="/search/marked" class="btn btn-secondary"><span class="mso">bookmark</span><p>Marked</p></a>
+                        <a href="/manage" class="btn btn-secondary"><span class="mso">tune</span>
+                            <p>Manage</p>
+                        </a>
+                        <a href="/search/marked" class="btn btn-secondary"><span class="mso">bookmark</span>
+                            <p>Marked</p>
+                        </a>
                     </div>
-                    <a href="add" class="btn btn-primary"><span class="mso">add</span><p>Add Note</p></a>
+                    <a href="add" class="btn btn-primary"><span class="mso">add</span>
+                        <p>Add Note</p>
+                    </a>
                 </div>
                 {% for noteitem in notelst %}
                 <div class="lst-item">
@@ -51,8 +57,9 @@
                     </div>
 
                     <nav>
-                        <a id="markBtn{{noteitem.id}}" onclick="markAct({{noteitem.id}})" class="{% if noteitem.id in markedNotelstInd %}marked{% endif %}"><span
-                            class="mso">bookmark</span></a>
+                        <a id="markBtn{{noteitem.id}}" onclick="markAct({{noteitem.id}})"
+                            class="{% if noteitem.id in markedNotelstInd %}marked{% endif %}"><span
+                                class="mso">bookmark</span></a>
                         <a href="detail/{{noteitem.id}}"><span class="mso">arrow_forward</span></a>
                     </nav>
                 </div>
@@ -65,7 +72,9 @@
                 <img src="{{ url_for('static', filename='img/blank.svg') }}" alt="Blank">
                 <h3>Nothing added</h3>
                 <p>Try adding something new!</p>
-                <a href="add" class="btn btn-primary mt-5"><span class="mso">add</span><p>Add Note</p></a>
+                <a href="add" class="btn btn-primary mt-5"><span class="mso">add</span>
+                    <p>Add Note</p>
+                </a>
             </div>
             {% endif %}
         </section>
@@ -74,9 +83,9 @@
 
 <script>
     function markAct(x) {
-        const markUrl='/markAction/'.concat(x);
+        const markUrl = '/markAction/'.concat(x);
         fetch(markUrl).then(Response => Response.json()).then(data => {
-            if(data['marked']) {
+            if (data['marked']) {
                 document.getElementById('markBtn'.concat(x)).classList.add('marked');
             }
             else {

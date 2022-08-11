@@ -157,6 +157,11 @@ nav a:hover {
   padding: 0.75rem;
 }
 
+.lst-item nav {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
 .tags a {
   border-radius: 9999px;
   --tw-bg-opacity: 1;

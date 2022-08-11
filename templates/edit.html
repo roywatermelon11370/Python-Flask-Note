@@ -22,7 +22,8 @@
     <div class="w-full md:w-2/3 lg:w-1/2">
         <header class="header">
             <nav>
-                <a href='/'><span class="mso">arrow_back</span></a>
+                <a href='{% if noteitem != 0 %}/detail/{{noteitem.id}}{% endif %}{% if noteitem == 0 %}/{% endif %}'><span
+                        class="mso">arrow_back</span></a>
             </nav>
             <h1>Edit Note</h1>
             <nav>
@@ -41,7 +42,7 @@
 
                 <div class="mt-5">
                     <label for="content" class="form-label"><span class="mso">notes</span> Content</label>
-                    <textarea name="content" id="content" cols="auto" rows="10" class="form-input"
+                    <textarea name="content" id="content" cols="auto" rows="13" class="form-input"
                         required>{{noteitem.content}}</textarea>
                 </div>
 
@@ -75,5 +76,10 @@
         </section>
     </div>
 </body>
+
+<script>
+    // document.querySelector('textarea').style.height = "";
+    // document.querySelector('textarea').style.height = (document.querySelector('textarea').scrollHeight+2) + "px";
+</script>
 
 </html>

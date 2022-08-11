@@ -424,6 +424,10 @@ nav a {
   padding: 0.5rem;
 }
 
+.lst-item div {
+  width: 100%;
+}
+
 .lst-item div h3 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -446,6 +450,7 @@ nav a {
   display: flex;
   -moz-column-gap: 0.25rem;
        column-gap: 0.25rem;
+  background: #d4d0c8;
 }
 
 .tags {

@@ -601,6 +601,11 @@ video {
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
 .bg-main {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
@@ -759,6 +764,7 @@ a:hover {
 
 nav {
   display: flex;
+  align-items: center;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
 }
@@ -1112,16 +1118,14 @@ pre {
   line-height: 2rem;
 }
 
-.nothing > p {
+.nothing>p {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
 .lst-item {
   position: relative;
-  display: flex;
   width: 100%;
-  justify-content: space-between;
   overflow: hidden;
   border-top-width: 1px;
   --tw-border-opacity: 1;
@@ -1130,6 +1134,8 @@ pre {
 }
 
 .lst-item div h3 {
+  width: calc(100% - 104px);
+  margin-top: 0.25rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1138,6 +1144,7 @@ pre {
 }
 
 .lst-item div p {
+  margin-top: 0.25rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1148,9 +1155,10 @@ pre {
 }
 
 .lst-item nav {
+  background: white;
   position: absolute;
   top: 0.25rem;
-  right: 0.25rem;
+  right: 0;
   display: flex;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;

@@ -30,6 +30,11 @@
     @apply bg-slate-600 rounded-full;
 }
 
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
 .bg-main {
     @apply bg-slate-200;
     min-height: 100vh;
@@ -142,7 +147,7 @@ a:hover {
 
 /* nav */
 nav {
-    @apply flex gap-x-2;
+    @apply flex gap-x-2 items-center;
 }
 
 nav a {
@@ -360,26 +365,28 @@ pre {
     @apply text-2xl;
 }
 
-.nothing > p {
+.nothing>p {
     @apply text-slate-500;
 }
 
 .lst-item {
-    @apply relative border-t border-slate-200 w-full flex justify-between p-3 overflow-hidden;
+    @apply relative border-t border-slate-200 w-full p-3 overflow-hidden;
 }
 
 .lst-item div h3 {
-    @apply text-xl whitespace-nowrap truncate;
+    width: calc(100% - 104px);
+    @apply text-xl whitespace-nowrap truncate mt-1;
 }
 
 .lst-item div p {
-    @apply text-sm text-slate-500 whitespace-nowrap truncate;
+    @apply text-sm text-slate-500 whitespace-nowrap truncate mt-1;
 }
 
 .lst-item nav {
+    background: white;
     position: absolute;
     top: 0.25rem;
-    right: 0.25rem;
+    right: 0;
 }
 
 .lst-item nav {

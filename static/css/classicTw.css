@@ -389,6 +389,7 @@ nav a {
 
 .lst-item nav {
     @apply flex gap-x-1;
+    background: #d4d0c8;
 }
 
 .tags {

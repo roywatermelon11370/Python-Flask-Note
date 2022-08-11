@@ -99,6 +99,7 @@
 
         {% if marked %}
         <section class="card">
+            {% if markedNotelst|length !=0 %}
             <div class="func-bar">
                 <p class="form-label"><span class="mso">manage_search</span> Results</p>
                 <nav>
@@ -107,7 +108,6 @@
                     </a>
                 </nav>
             </div>
-            {% if markedNotelst|length !=0 %}
             <div class="note-lst">
                 {% for noteitem in markedNotelst %}
                 <div class="lst-item">
@@ -133,9 +133,9 @@
 
             {% if markedNotelst|length == 0 %}
             <div id="nothing" class="nothing">
-                <img src="{{ url_for('static', filename='img/404.svg') }}" alt="Blank">
-                <h3>Not Found</h3>
-                <p>We couldn't find what you're looking for</p>
+                <img src="{{ url_for('static', filename='img/blank.svg') }}" alt="Blank">
+                <h3>Nothing Marked</h3>
+                <p>Try marking something via the mark button</p>
             </div>
             {% endif %}
         </section>
