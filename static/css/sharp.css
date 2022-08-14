@@ -49,8 +49,8 @@
 
 .card {
   border-radius: 0.125rem;
-  -webkit-animation: fade .25s ease;
-          animation: fade .25s ease;
+  -webkit-animation: fade .25s cubic-bezier(0,.65,.35,1);
+          animation: fade .25s cubic-bezier(0,.65,.35,1);
 }
 
 @-webkit-keyframes fade {

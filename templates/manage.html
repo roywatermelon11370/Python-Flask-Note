@@ -1,99 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}Manage{% endblock title%}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Note Sigma</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/{}.css'.format(setts.theme)) }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Readex+Pro&display=swap" rel="stylesheet">
+{% block content %}
+<header class="header">
+    <nav>
+        <a href='/'><span class="mso">arrow_back</span></a>
+    </nav>
+    <h1>Manage{% if marked %} Marked{% endif %} Notes</h1>
+    <nav>
+        <a href="/search"><span class="mso">search</span></a>
+    </nav>
+</header>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        rel="stylesheet" />
-</head>
+<section class="card">
+    {% if notelst|length != 0 %}
+    <form id="manageForm" action="/manageAction" method="post">
+        <div class="func-bar">
+            <button type="reset" class="btn btn-secondary"><span class="mso">close</span>
+                <p>Clear</p>
+            </button>
+            <button id="delBtn" type="submit" onclick="sent()" class="btn btn-danger"><span class="mso">delete</span>
+                <p>Delete</p>
+            </button>
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for i in messages %}
+        <p class="text-danger p-2">{{i}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
 
-<body class="bg-main flex flex-warp justify-center">
-    <div class="w-full md:w-2/3 lg:w-1/2">
-        <header class="header">
-            <nav>
-                <a href='/'><span class="mso">arrow_back</span></a>
-            </nav>
-            <h1>Manage{% if marked %} Marked{% endif %} Notes</h1>
-            <nav>
-                <a href="/search"><span class="mso">search</span></a>
-            </nav>
-        </header>
-
-        <section class="card">
-            {% if notelst|length != 0 %}
-            <form id="manageForm" action="/manageAction" method="post">
-                <div class="func-bar">
-                    <button type="reset" class="btn btn-secondary"><span class="mso">close</span>
-                        <p>Clear</p>
-                    </button>
-                    <button id="delBtn" type="submit" onclick="sent()" class="btn btn-danger"><span
-                            class="mso">delete</span>
-                        <p>Delete</p>
-                    </button>
-                </div>
-                {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                {% for i in messages %}
-                <p class="text-danger p-2">{{i}}</p>
-                {% endfor %}
-                {% endif %}
-                {% endwith %}
-
-                {% for noteitem in notelst %}
-                <label id="{{noteitem.id}}" class="form-checkbox">
-                    <div>
-                        <h3>{{noteitem.title}}</h3>
-                        <p>{{noteitem.content}}</p>
-                    </div>
-                    <input type="checkbox" name="noteitem" value="{{noteitem.id}}">
-                    <span class="form-checkbox-icon"></span>
-                </label>
-                {% endfor %}
-
-            </form>
-            {% endif %}
-
-
-            {% if notelst|length == 0 %}
-            <div id="nothing" class="nothing">
-                <img src="{{ url_for('static', filename='img/blank.svg') }}" alt="Blank">
-                <h3>Nothing added</h3>
-                <p>Try adding something new!</p>
+        {% for noteitem in notelst %}
+        <label id="{{noteitem.id}}" class="form-checkbox">
+            <div>
+                <h3>{{noteitem.title}}</h3>
+                <p>{{noteitem.content}}</p>
             </div>
-            {% endif %}
-        </section>
+            <input type="checkbox" name="noteitem" value="{{noteitem.id}}">
+            <span class="form-checkbox-icon"></span>
+        </label>
+        {% endfor %}
+
+    </form>
+    {% endif %}
+
+
+    {% if notelst|length == 0 %}
+    <div id="nothing" class="nothing">
+        <img src="{{ url_for('static', filename='img/blank.svg') }}" alt="Blank">
+        <h3>Nothing added</h3>
+        <p>Try adding something new!</p>
     </div>
-    <p class="text-danger"></p>
-</body>
-
-<script>
-    // function sent() {
-    //     document.getElementById('delBtn').preventDefault();
-    //     const manageUrl = {{ url_for("manageAction") | tojson }};
-    //     var ManFormData=new FormData(document.getElementById('ManageForm'));
-    //     fetch(manageUrl, {"method": "POST","body": ManFormData,}).then(Response => Response.json()).then(data=>{
-    //         if(data=='Nothing') {
-    //             continue;
-    //         }
-    //         else{
-    //             var lstLen=data.length;
-    //             for(i=0,i<=lstLen,i++) {
-    //                 document.getElementById(i).remove();
-    //             }
-    //         }
-    //     })
-    // }
-</script>
-
-</html>
+    {% endif %}
+</section>
+{% endblock content %}

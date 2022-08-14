@@ -7,7 +7,8 @@ module.exports = {
     'templates/manage.html',
     'templates/settings.html',
     'templates/search.html',
-    'templates/search_results.html'
+    'templates/search_results.html',
+    'templates/base.html'
   ],
   
   theme: {
