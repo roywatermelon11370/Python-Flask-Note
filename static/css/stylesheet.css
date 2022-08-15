@@ -562,6 +562,10 @@ video {
   font-family: 'Readex Pro', 'Noto Sans TC', sans-serif;
 }
 
+body {
+  transition: all .2s ease;
+}
+
 *::-moz-selection {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
@@ -663,7 +667,7 @@ a:hover {
 
 .btn:active {
   transition: all .1s ease;
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
 
 .btn .mso {
@@ -791,7 +795,7 @@ nav a:hover {
 
 nav a:active {
   transition: all .1s ease;
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
 
 .func-bar {
@@ -855,8 +859,8 @@ nav a:active {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 0.75rem;
-  -webkit-animation: fade-in 0.3s cubic-bezier(0,.7,.3,1);
-          animation: fade-in 0.3s cubic-bezier(0,.7,.3,1);
+  -webkit-animation: fade-in 0.3s cubic-bezier(0, .7, .3, 1);
+          animation: fade-in 0.3s cubic-bezier(0, .7, .3, 1);
 }
 
 /* form */
