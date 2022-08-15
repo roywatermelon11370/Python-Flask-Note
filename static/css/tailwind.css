@@ -79,11 +79,12 @@ a:hover {
 
 .btn {
     @apply rounded-full p-3 px-5 align-text-bottom inline-block;
-    line-height: 1.2rem
+    line-height: 1.2rem;
+    transition: all .2s ease;
 }
 
 .btn:active {
-    transition: all .1s ease;
+    transition: all .05s ease;
     transform: scale(0.9);
 }
 
@@ -105,42 +106,34 @@ a:hover {
 }
 
 .btn-primary {
-    transition: all .2s ease;
     @apply bg-blue-500 text-white;
 }
 
 .btn-primary:hover {
-    transition: all .2s ease;
     @apply bg-blue-600 text-white cursor-pointer;
 }
 
 .btn-danger {
-    transition: all .2s ease;
     @apply bg-rose-500 text-white;
 }
 
 .btn-danger:hover {
-    transition: all .2s ease;
     @apply bg-rose-600 text-white cursor-pointer;
 }
 
 .btn-white {
-    transition: all .2s ease;
     @apply bg-white text-blue-500;
 }
 
 .btn-white:hover {
-    transition: all .2s ease;
     @apply bg-blue-200 text-blue-500 cursor-pointer;
 }
 
 .btn-secondary {
-    transition: all .2s ease;
     @apply bg-slate-200 text-slate-900;
 }
 
 .btn-secondary:hover {
-    transition: all .2s ease;
     @apply bg-slate-300 text-slate-900 cursor-pointer;
 }
 
@@ -166,7 +159,7 @@ nav a:hover {
 }
 
 nav a:active {
-    transition: all .1s ease;
+    transition: all .05s ease;
     transform: scale(0.9);
 }
 
@@ -379,7 +372,7 @@ pre {
 
 .lst-item div h3 {
     width: calc(100% - 104px);
-    @apply text-xl whitespace-nowrap truncate mt-1;
+    @apply text-lg whitespace-nowrap truncate mt-1;
 }
 
 .lst-item div p {

@@ -107,7 +107,7 @@
   border-bottom: 2.25px solid #8b8a87;
   border-radius: 0;
   -webkit-animation: none;
-          animation: none;
+  animation: none;
 }
 
 a {
@@ -212,7 +212,7 @@ nav a:active {
 nav {
   display: flex;
   -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
+  column-gap: 0.25rem;
 }
 
 nav a {
@@ -449,14 +449,14 @@ nav a {
 .lst-item nav {
   display: flex;
   -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
+  column-gap: 0.25rem;
   background: #d4d0c8;
 }
 
 .tags {
   display: flex;
   -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
+  column-gap: 0.25rem;
 }
 
 .tags a {

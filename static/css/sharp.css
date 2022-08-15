@@ -50,7 +50,7 @@
 .card {
   border-radius: 0.125rem;
   -webkit-animation: fade .3s cubic-bezier(0, .7, .3, 1);
-  animation: fade .3s cubic-bezier(0, .7, .3, 1);
+          animation: fade .3s cubic-bezier(0, .7, .3, 1);
 }
 
 @-webkit-keyframes fade {
@@ -178,6 +178,11 @@ nav a:hover {
 header nav a {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.func-bar {
+  border-radius: 0.125rem;
+  padding: 0.5rem;
 }
 
 /* form */
